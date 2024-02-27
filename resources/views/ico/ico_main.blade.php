@@ -1440,7 +1440,7 @@
                                         <h2 class="title title-lg ttu animated" data-animate="fadeInUp" data-delay="0.7">Contact Us</h2>
                                         <p class="animated" data-animate="fadeInUp" data-delay="0.8">We are always open and we welcome and questions you have for our team. If you wish to get in touch, please fill out the form below. Someone from our team will get back to you shortly.</p>
                                     </div>
-                                    <form class="nk-form-submit" action="form/contact.php')}}" method="post">
+                                    <form class="nk-form-submit" action="{{asset('form/contact.php')}}" method="post">
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="field-item animated" data-animate="fadeInUp" data-delay="0.8">
