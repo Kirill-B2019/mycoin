@@ -1,0 +1,54 @@
+.ingredients {
+    padding: 0; /* Убираем отступы */
+}
+.ingredients li {
+    align-items: baseline; /* Выравниваем текст */
+    display: flex; /* Включаем флексы */
+    margin-bottom: 0.5em; /* Отступ снизу */
+}
+.ingredients li::before {
+    content: ''; /* Выводим линию */
+    border-bottom: 1px dashed #ccc; /* Параметры линии */
+    flex-grow: 1; /* Линия занимает всё доступное пространство */
+    order: 2; /* Выводим вторым */
+    margin: 0 5px; /* Расстояние от текста */
+}
+.ingredients .value {
+    order: 3; /* Выводим третьим */
+}
+/* ползунок*/
+
+.value {
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+
+}
+input[type="range"] {
+    display: block;
+    -webkit-appearance: none;
+    background-color: #f8520c;
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    margin: 0 auto;
+    outline: 0;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: rgba(45, 58, 74, 0.8);
+    padding-top: -10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}​
+ input[type="range"]::-webkit-slider-thumb:hover {
+     background-color: white;
+     border: 2px solid #e74c3c;
+ }
+input[type="range"]::-webkit-slider-thumb:active {
+    transform: scale(1.6);
+}
