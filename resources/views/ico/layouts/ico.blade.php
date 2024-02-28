@@ -13,7 +13,7 @@
     <link href="{{asset('images/apple-touch-icon-114x114.png')}}" rel="apple-touch-icon" sizes="114x114">
     <link href="{{asset('images/apple-touch-icon-144x144.png')}}" rel="apple-touch-icon" sizes="144x144">
     <!-- Site Title  -->
-    <title>MCI - Coin | ICO Crypto - ICO Platform MyCOIN In</title>
+    <title>MCP - Coin | MyCoinToken Platform SYStem (MCOIN) - ICO Platform MyCOIN In</title>
     <!-- Bundle and Base CSS -->
     <link rel="stylesheet" href="{{asset('ico/assets/css/vendor.bundle.css?ver=210')}}">
     <link rel="stylesheet" href="{{asset('ico/assets/css/style-azalea.css?ver=210')}}">

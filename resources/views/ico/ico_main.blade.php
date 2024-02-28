@@ -62,7 +62,7 @@
                             </div>
                             <div class="cpn-action">
                                 <ul class="btn-grp mx-auto">
-                                    <li class="animated" data-animate="fadeInUp" data-delay="1.1"><a href="#" data-bs-toggle="modal" data-bs-target="#login-popup"  class="btn btn-primary btn-round">ПРОАДАЖА ТОКЕНОВ MCI</a></li>
+                                    <li class="animated" data-animate="fadeInUp" data-delay="1.1"><a href="#" data-bs-toggle="modal" data-bs-target="#login-popup"  class="btn btn-primary btn-round">ПРОАДАЖА ТОКЕНОВ MCP</a></li>
 
                                 </ul>
                             </div>
