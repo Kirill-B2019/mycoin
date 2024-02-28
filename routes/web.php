@@ -26,6 +26,7 @@ use App\Http\Controllers\AuthUser\UserProfileController;
 use App\Http\Controllers\AuthUser\UserProjectController;
 use App\Http\Controllers\AuthUser\UserSettingController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ICO\MCPTokenController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\Public\PublicDonatController;
 use App\Http\Controllers\Public\PublicFaqCategoryController;
@@ -41,7 +42,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['domain'=>getenv('APP_DOMAIN_ICO')],function (){
-    Route::get('/', function () { return view('ico.ico_main'); })->name('ico.main');
+    Route::get('/',  [MCPTokenController::class, 'index'])->name('ico.main');
 
 });
 

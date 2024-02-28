@@ -24,7 +24,26 @@
                 </a>
             </li>
         </ul>
-
+        @anyperms('EmissionManagement')
+        <!-- меню админа slug администратора площадки-->
+        <p class="text-muted nav-heading mt-4 mb-1">
+            <span>Управление Эмиссией</span>
+        </p>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+                <a href="#WalletAdm" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                    <i class="fe fe-credit-card fe-16"></i>
+                    <span class="ml-3 item-text">Эмиссия</span>
+                </a>
+                <ul class="collapse list-unstyled pl-4 w-100" id="WalletAdm">
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="{{route('adp.wallet_balance')}}"><span class="ml-1 item-text">Баланс</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        @endanyperms
 
         @anyperms('ViewingBalance','ManagingPaymentOrderStatuses')
         <!-- меню админа slug администратора площадки-->
@@ -32,6 +51,7 @@
             <span>Управление Кошельком</span>
         </p>
         @endanyperms
+
 
         @perm('ViewingBalance')
         <ul class="navbar-nav flex-fill w-100 mb-2">

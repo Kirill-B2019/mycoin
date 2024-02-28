@@ -1,0 +1,29 @@
+.token_info
+{
+    text-align: left;
+    color: #777474;
+    line-height: 3px;
+    display: inline-block;
+    position: relative;
+    padding: .3em .5em;
+    margin: 5px;
+    border-left: 1px solid;
+
+
+}
+.token_info p{
+    font-family: gitbook-code-font, Menlo, monospace;
+    font-size: 80%;
+    letter-spacing: 0.2em;
+color: rgba(255, 255, 255, 0.54);
+    font-weight: 100;
+}
+.green{
+    color: rgb(17, 112, 6) !important;
+}
+.token_info p span{
+    font-size: 120%;
+    color: rgb(248, 82, 12);
+    letter-spacing: normal;
+    text-transform: none;
+}

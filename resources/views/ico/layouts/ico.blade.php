@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{asset('ico/assets/css/style-azalea.css?ver=210')}}">
     <!-- Extra CSS -->
     <link rel="stylesheet" href="{{asset('ico/assets/css/theme.css?ver=210')}}">
+    <link rel="stylesheet" href="{{asset('ico/assets/css/my.css')}}">
 </head>
 
 <body class="nk-body body-wider bg-theme mode-onepage">

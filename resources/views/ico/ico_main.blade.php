@@ -53,18 +53,37 @@
                 <div class="nk-block nk-block-header nk-block-sm my-auto">
                     <div class="container pt-5">
                         <div class="banner-caption text-center">
-                            <h1 class="title title-xl-s2 ttu animated" data-animate="fadeInUp" data-delay="0.7">{{__('ICO— первоначальное размещение токенов MCI COIN')}}</h1>
-                            <h1 class="title title-xs-2 ttu animated text-muted" data-animate="fadeInUp" data-delay="0.9">{{__('Криптоинвестиционная проектная платформа')}}</h1>
+                            <h1 class="title title-xl-s2 ttu animated" data-animate="fadeInUp" data-delay="0.7">{{__('ICO— первоначальное размещение токенов MCP Security Tokens')}}</h1>
+                            <h1 class="title title-xs-2 ttu animated text-muted" data-animate="fadeInUp" data-delay="0.9">{{__('Токенизированная криптоинвестиционная проектная платформа с собственным BLOCKCHAIN')}}</h1>
                             <div class="row justify-content-center pb-3">
-                                <div class="col-sm-11 col-xl-11 col-xxl-8">
-                                    <p class="lead animated" data-animate="fadeInUp" data-delay="0.8">Криптоинвестиционная платформа с возможностью получить инвестиции для реаоизации инновационных проектов, а так же обеспечивающая устойчивый вариативный доход для инвесторов.</p>
+                                <div class="col-sm-12 col-xl-12 col-xxl-12">
+                                    <div class="row">
+                                        <div class="col-sm-11 col-xl-11 col-xxl-6"><p class="lead animated" data-animate="fadeInUp" data-delay="0.8">Токенизированная криптоинвестиционная платформа с возможностью получить инвестиции для реализации инновационных проектов, а так же обеспечивающая устойчивый вариативный доход для инвесторов.</p>
+                                        </div>
+                                        <div class="col justify-content-end token_info animated" data-animate="fadeInUp" data-delay="1">
+                                            <p class="green">/*</p>
+                                            <p class="green">/* @ {{$MCPtoken->desc}}</p>
+                                            <p class="green">/*</p>
+                                            <p>>_name=> <span>{{$MCPtoken->token_name}}</span> </p>
+                                            <p>>_totalSupply=> <span>{{number_format((float)$MCPtoken->total/100000, 6, '.', '')}}</span><small> (_decimals=> <span>6</span>)</small></p>
+                                            <p>>_protocol=> <span>{{$MCPtoken->protocol}}</span></p>
+                                            <p>>_network=> <span>{{$MCPtoken->main_net}}</span></p>
+                                            <p>>_endPoint=> <span>{{$MCPtoken->end_point}}</span></p>
+                                            <p>>_createdAt=> <span>{{$MCPtoken->created_at->format('d-m-Y')}}</span></p>
+                                            <p>>_nowPrice=> <span>1 MCP = {{$ethPrice->USD*0.005}} USDT</span><small> ({{now()->format('H:i d-m-Y')}})</small></p>
+                                        </div>
+                                    </div>
+
                                 </div>
+
                             </div>
                             <div class="cpn-action">
                                 <ul class="btn-grp mx-auto">
-                                    <li class="animated" data-animate="fadeInUp" data-delay="1.1"><a href="#" data-bs-toggle="modal" data-bs-target="#login-popup"  class="btn btn-primary btn-round">ПРОАДАЖА ТОКЕНОВ MCP</a></li>
-
+                                    <li class="animated" data-animate="fadeInUp" data-delay="1.1"><a href="#" data-bs-toggle="modal" data-bs-target="#login-popup"  class="btn btn-primary btn-round">ПРОДАЖА ТОКЕНОВ MCP</a></li>
                                 </ul>
+
+
+
                             </div>
                         </div>
                     </div>
@@ -72,62 +91,51 @@
                 <div class="nk-block nk-block-status">
                     <div class="container container-xxl">
                         <div class="row gutter-vr-40px justify-content-between">
-                            <div class="col-xxl-6 col-xl-5 col-lg-5">
+                            <div class="col-xxl-5 col-xl-5 col-lg-5">
                                 <div class="progress-wrap progress-wrap-point animated" data-animate="fadeInUp" data-delay="0.8">
                                     <ul class="progress-info progress-info-s2">
-                                        <li>{{__('Размещено')}} - <span>25,500 Токенов</span></li>
-                                        <li class="text-end">{{__('Цель')}} - <span>150,000 Токенов</span></li>
+                                        <li>{{__('Размещено')}} - <span>13.500 Токенов</span> (9%)</li>
+                                        <li class="text-end">{{__('Цель')}} - <span>150.000 Токенов</span></li>
                                     </ul>
                                     <div class="progress-bar progress-bar-xs">
-                                        <div class="progress-percent progress-percent-s2" data-percent="17"></div>
-                                        <div class="progress-point" data-point="15">Soft Cap</div>
+                                        <div class="progress-percent progress-percent-s2" data-percent="9"></div>
+                                        <div class="progress-point" data-point="6">Soft Cap</div>
                                         <div class="progress-point" data-point="55">Crowdsale</div>
                                         <div class="progress-point" data-point="90">Hard Cap</div>
                                     </div>
+
                                 </div>
                             </div>
-                            <div class="col-xxl-5 col-xl-6 col-lg-7 text-center text-sm-start">
+                            <div class="col-xxl-6 col-xl-6 col-lg-7 text-center text-sm-start">
                                 <div class="row justify-content-around gutter-vr-30px">
-                                    <div class="col-sm-4 col-md-6 col-lg-4 col-xl-5">
+                                    <div class="col-sm-9 col-md-5 col-lg-3 col-xl-3">
                                         <div class="status-info animated" data-animate="fadeInUp" data-delay="0.9">
                                             <h6 class="title title-xxs tc-default status-title ttu">{{__('Этапная скидка')}}</h6>
                                             <h3 class="fz-3 fw-3 status-percent">40%</h3>
                                             <div class="fz-8">{{__('ДОСТУПНА СЕЙЧАС')}}</div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-8 col-md-6 col-lg-7 col-xl-7">
-                                        <div class="status-countdown float-sm-end animated" data-animate="fadeInUp" data-delay="1">
-                                            <h6 class="title title-xxs tc-default status-title ttu">Скидка заеончиться через:</h6>
-                                            <div class="countdown justify-content-center justify-content-sm-start countdown-s3 countdown-s3-alt" data-date="2024/04/27" data-day-text="дни" data-hour-text="час" data-min-text="мин" data-sec-text="сек"></div>
+                                    <div class="col-sm-9 col-md-7 col-lg-4 col-xl-4">
+                                        <div class="status-info animated" data-animate="fadeInUp" data-delay="0.9">
+                                            <h6 class="title title-xxs tc-default status-title ttu">Цена 1 {{$MCPtoken->token_name}} сейчас</h6>
+                                            <h3 class="fz-3 fw-3 status-percent">{{$ethPrice->USD*0.002}} USDT </h3>
+                                            <div class="fz-8">0,002 ETH</div>
                                         </div>
                                     </div>
+                                    <div class="col-sm-9 col-md-6 col-lg-5 col-xl-5">
+                                        <div class="status-countdown float-sm-end animated" data-animate="fadeInUp" data-delay="1">
+                                            <h6 class="title title-xxs tc-default status-title ttu">Скидка закончится через:</h6>
+                                            <div class="countdown justify-content-center justify-content-sm-start countdown-s3 countdown-s3-alt" data-date="2024/04/14" data-day-text="дни" data-hour-text="час" data-min-text="мин" data-sec-text="сек"></div>
+                                        </div>
+
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="nk-block nk-block-actions">
-                    <div class="container container-xxl">
-                        <div class="row gutter-vr-40px align-items-center">
-                            <div class="col-sm-7 d-flex justify-content-center justify-content-sm-start">
-                                <ul class="btn-grp btn-grp-break justify-content-center justify-content-sm-start gutter-vr-20px">
 
-                                    <li class="animated" data-animate="fadeInUp" data-delay="0.9"><a href="#" class="link link-light link-break"><em class="icon-circle icon-border far fa-lightbulb"></em><span>Why buy Tokens now?</span></a></li>
-                                </ul>
-                            </div>
-                            <div class="col-sm-5">
-                                <ul class="social-links social-links-s2 justify-content-center justify-content-sm-end animated" data-animate="fadeInUp" data-delay="1">
-                                    <li><a href="#"><em class="fab fa-twitter"></em></a></li>
-                                    <li><a href="#"><em class="fab fa-medium-m"></em></a></li>
-                                    <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
-                                    <li><a href="#"><em class="fab fa-youtube"></em></a></li>
-                                    <li><a href="#"><em class="fab fa-bitcoin"></em></a></li>
-                                    <li><a href="#"><em class="fab fa-github"></em></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- Place Particle Js -->
                 <div id="particles-bg" class="particles-container is-fixed particles-bg op-20"></div>
             </div>
