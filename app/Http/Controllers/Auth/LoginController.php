@@ -34,7 +34,7 @@ class LoginController extends Controller
         // Check user role
         switch ($role) {
             case 'SuperAdmin':
-                return '/adp/main';
+                return '/adp/home';
                 break;
 
             default:
