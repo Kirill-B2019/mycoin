@@ -35,11 +35,11 @@ class LoginController extends Controller
         switch ($role) {
             case 'SuperAdmin':
                 return '/adp/home';
-                break;
+
 
             default:
                 return '/cabinet/main';
-                break;
+
         }
     }
 
