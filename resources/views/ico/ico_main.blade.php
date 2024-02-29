@@ -26,8 +26,8 @@
                             <nav class="header-menu" id="header-menu">
                                 <ul class="menu">
                                     <li class="menu-item"><a class="menu-link nav-link" href="#header">{{__('Начало')}}</a></li>
-<!--                                    <li class="menu-item"><a class="menu-link nav-link" href="#about">About</a></li>
-                                    <li class="menu-item"><a class="menu-link nav-link" href="#platform">Platform</a></li>
+                                    <li class="menu-item"><a class="menu-link nav-link" href="#about">О Системе</a></li>
+                                <!--    <li class="menu-item"><a class="menu-link nav-link" href="#platform">Platform</a></li>
                                     <li class="menu-item"><a class="menu-link nav-link" href="#mvp">MVP</a></li>
                                     <li class="menu-item"><a class="menu-link nav-link" href="#tokensale">Tokens</a></li>-->
                                     <li class="menu-item"><a class="menu-link nav-link" href="#roadmap">{{__('Дорожная карта')}}</a></li>
@@ -53,8 +53,8 @@
                 <div class="nk-block nk-block-header nk-block-sm my-auto">
                     <div class="container pt-5">
                         <div class="banner-caption text-center">
-                            <h1 class="title title-xl-s2 ttu animated" data-animate="fadeInUp" data-delay="0.7">{{__('ICO— первоначальное размещение токенов MCP Security Tokens')}}</h1>
-                            <h1 class="title title-xs-2 ttu animated text-muted" data-animate="fadeInUp" data-delay="0.9">{{__('Токенизированная криптоинвестиционная проектная платформа с собственным BLOCKCHAIN')}}</h1>
+                            <h1 class="title title-xl-s2 ttu animated" data-animate="fadeInUp" data-delay="0.7">ICO— первоначальное размещение токенов <span class="bg-orange-30">MCP</span> Security Tokens</h1>
+                            <h1 class="title title-xs-2 ttu animated text-muted" data-animate="fadeInUp" data-delay="0.9">Токенизированная криптоинвестиционная проектная платформа с собственным BLOCKCHAIN</h1>
                             <div class="row justify-content-center pb-3">
                                 <div class="col-sm-12 col-xl-12 col-xxl-12">
                                     <div class="row">
@@ -146,7 +146,7 @@
                     <div class="row justify-content-center text-center">
                         <div class="col-lg-6">
                             <div class="section-head section-head-s2">
-                                <h2 class="title title-xl animated" data-animate="fadeInUp" data-delay="0.1" title="What and Why">ABOUT</h2>
+                                <h2 class="title title-xl animated" data-animate="fadeInUp" data-delay="0.1" title="СУТЬ СИСТЕМЫ"><span class="bg-orange-30">О Системе</span></h2>
                             </div>
                         </div>
                     </div>
@@ -161,7 +161,7 @@
                             </div>
                             <div class="col-lg-5">
                                 <div class="nk-block-text">
-                                    <h2 class="title animated" data-animate="fadeInUp" data-delay="0.3">We build fully Decentralized Marketplace that Augment Access to Blockchain Technologies</h2>
+                                    <h2 class="title animated" data-animate="fadeInUp" data-delay="0.3">Мы создаем полностью автономную криптоинвестиционную проектную площадку.</h2>
                                     <p class="animated" data-animate="fadeInUp" data-delay="0.4">We have developed a state-of-the-art marketplace where you can securely and reliably buy and sell any items. The fastest and most flexible asset platform in existence. It will include easy cryptocurrency payments integration, and even a digital arbitration system. </p>
                                     <p class="animated" data-animate="fadeInUp" data-delay="0.5">At the end, Our aims to integrate all companies, employees, and business assets into a unified blockchain ecosystem, which will make business truly efficient, transparent, and reliable.</p>
                                     <ul class="btn-grp gutter-vr-20px pdt-m">
@@ -431,7 +431,7 @@
                     <div class="row justify-content-center text-center">
                         <div class="col-lg-6">
                             <div class="section-head section-head-s2">
-                                <h2 class="title title-xl animated" data-animate="fadeInUp" data-delay="0.1" title="Token Details">TOKENS</h2>
+                                <h2 class="title title-xl animated" data-animate="fadeInUp" data-delay="0.1" title="Token Details"><span class="bg-orange-30">TOKENS</span></h2>
                                 <p class="animated" data-animate="fadeInUp" data-delay="0.2">Breakdown of our Token Recipients.</p>
                             </div>
                         </div>
@@ -1530,7 +1530,7 @@
                     <div class="col-lg-6 order-lg-last text-lg-end">
                         <ul class="footer-nav">
                             <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of sales</a></li>
+
                         </ul>
                     </div>
                     <div class="col-lg-6">

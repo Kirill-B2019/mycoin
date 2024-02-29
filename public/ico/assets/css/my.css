@@ -27,3 +27,15 @@ color: rgba(255, 255, 255, 0.54);
     letter-spacing: normal;
     text-transform: none;
 }
+
+.bg-orange-30:before {
+    content: "";
+    position: absolute;
+    background: rgb(248, 82, 12);
+    top: 0;
+    right: 50%;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
+}
+
