@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Entity;
+namespace App\Models\BlockChain;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -12,13 +12,15 @@ class Block extends Model
     private string $hash;
     private string $previousHash;
     private  int $timestamp;
-    private string $data;
-    public function __construct(int $index, string $previousHash, string $data)
+    private $data;
+    private string $dateJson;
+    public function __construct(int $index, string $previousHash = '', $data)
     {
        $this->index = $index;
        $this->previousHash = $previousHash;
        $this->data = $data;
        $this->timestamp = time();
+
     }
 
 
@@ -52,4 +54,6 @@ class Block extends Model
     {
         return $this->data;
     }
+
+
 }

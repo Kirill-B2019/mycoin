@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\MCPChain\Class;
 
-use App\Models\Entity\Chain;
+use App\Models\BlockChain\Chain;
 
 class ChainValidator
 {

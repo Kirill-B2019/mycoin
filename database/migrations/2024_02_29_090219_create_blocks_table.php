@@ -14,7 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('blocks', function (Blueprint $table) {
-            $table->id();
+            $table->integer('index');
+            $table->string('hash');
+            $table->string('preview_hash')->nullable();
+            $table->json('data');
+            $table->integer('timestamp');
             $table->timestamps();
         });
     }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\MCPChain\Class;
 
-use App\Models\Entity\Block;
+use App\Models\BlockChain\Block;
 
 class BlockService
 {
