@@ -18,7 +18,7 @@ class Block extends Model
     {
        $this->index = $index;
        $this->previousHash = $previousHash;
-       $this->data = $data;
+       $this->data = json_encode($data);
        $this->timestamp = time();
 
     }

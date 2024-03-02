@@ -3218,7 +3218,7 @@ ul.progress-info { display: flex; justify-content: space-between; }
   10%, 100% { transform: translate(-50%, -50%) scale(1.7);
     opacity: 0; } }
 
-.modal-dialog { padding: 15px; }
+.modal-dialog { padding: 15px;}
 
 .modal-dialog-bottom { display: flex; align-items: flex-end; min-height: calc(100% - (.5rem * 2)); }
 
@@ -6326,7 +6326,7 @@ ul.progress-info { display: flex; justify-content: space-between; }
   .chart-canvas { min-height: 300px; }
   .chart-canvas-s1 { min-height: 215px; } }
 
-.ath-container { width: 440px; max-width: 100%; margin: 30px auto; }
+.ath-container { width: 700px; max-width: 100%; margin: 30px auto; }
 
 .ath-header { padding: 0 0 30px; }
 
