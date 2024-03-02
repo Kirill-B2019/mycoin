@@ -171,7 +171,7 @@
 <script>
 var price = <?php echo round($ethPrice->USD*0.00002,5);?>;
 
-    $(".denomination").click(function (event) {
+    $(".denomination").click(function () {
         $(".denomination").removeClass("selected").prop("checked", false);
 
         $(this).addClass("selected");

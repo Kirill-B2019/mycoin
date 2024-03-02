@@ -6,7 +6,7 @@
         <!-- nav bar -->
         <div class="w-100 mb-4 d-flex">
             <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="{{ route('cabinet.main') }}">
-                <img src="{{asset('images/load.png')}}">
+                <img alt = "MY-COIN" src="{{asset('images/load.png')}}">
             </a>
         </div>
 
