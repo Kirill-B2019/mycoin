@@ -37,8 +37,8 @@
                 <div class="ath-body bg-theme tc-light">
                     <h5 class="ath-heading title">Участие<br/> в PRE-ICO</h5>
 
-                        <form action="http://localhost" method="post">
-                            <input type="hidden" id="hid_adm" name="ammount" value="10">
+                        <form action="{{route('send_pay')}}" method="POST">
+                            <input type="hidden" id="hid_adm" name="mcp_amount" value="10">
                             @csrf
                             <div class="row">
                             <div class="col-xxl-7 col-sm-6 col-md-7 col-lg-7 col-xl-7">
@@ -47,26 +47,26 @@
                                     <div class="col">
                                         <div class="row mb-5">
                                             <div class="col">
-                                                <input type="text" id="inp" class="input-line" placeholder="Сумма в USDT" autofocus required>
+                                                <input type="text" id="inp" class="input-line" placeholder="Сумма в USDT" name="amount" autofocus required>
                                             </div>
                                         </div>
                                         <div class="donate-amount">
                                             <div class="row my-5">
                                                 <div class="col">
                                                     <div class="denomination">
-                                                        <input autocomplete="off" type="radio" name="amount" id="amount10" value="10" checked="">
+                                                        <input autocomplete="off" type="radio"  id="amount10" value="10" checked="">
                                                         <label for="amount10">10 USDT</label>
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="denomination">
-                                                        <input autocomplete="off" type="radio" name="amount" id="amount50" value="50">
+                                                        <input autocomplete="off" type="radio" id="amount50" value="50">
                                                         <label for="amount50">50 USDT</label>
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="denomination">
-                                                        <input autocomplete="off" type="radio" name="amount" id="amount100" value="100">
+                                                        <input autocomplete="off" type="radio" id="amount100" value="100">
                                                         <label for="amount100">100 USDT</label>
                                                     </div>
                                                 </div>
@@ -82,7 +82,7 @@
                                 </div>
                                 <div class="row my-5">
                                     <div class="col">
-                                        <input type="text" class="input-line" placeholder="Ваш ETH кошелек" name="adress">
+                                        <input type="text" class="input-line" placeholder="Ваш ETH кошелек" name="sender_adress">
                                     </div>
                                 </div>
                                 <div class="row my-5">
@@ -106,7 +106,7 @@
                                                 <p>Зачисленные на системный баланс MCP доступны для участия в инвестировании проектов</p>
                                                 <p>Вывод MPC на баланс Внешнего кошелька будет осуществлен при следующем обновлении системы.</p>
                                                 <div class="field-wrap">
-                                                    <input class="input-switch" id="switch-2" name="allow" type="checkbox" required="" aria-invalid="true" checked>
+                                                    <input class="input-switch" id="switch-2" name="allow" type="checkbox"  aria-invalid="true" checked required>
                                                     <label for="switch-2">Ознакомлен(-а)</label>
                                                 </div>
                                             </div>
@@ -179,7 +179,7 @@ var price = <?php echo round($ethPrice->USD*0.00002,5);?>;
 
         $("#InAmm").text($(this).children(":first").val());
         $("#InAmm2").text(parseFloat($(this).children(":first").val() / price).toFixed(6));
-        $("#hid_adm").val($(this).children(":first").val());
+        $("#hid_adm").val(parseFloat($(this).children(":first").val() / price).toFixed(6));
         $("#inp").val($(this).children(":first").val());
 
     });
@@ -206,7 +206,7 @@ var price = <?php echo round($ethPrice->USD*0.00002,5);?>;
                     var res2 = String(parseFloat(($i + key) / price).toFixed(6));
                     $("#InAmm").text($i + key);
                     $("#InAmm2").text(res2);
-                    $("#hid_adm").val($(this).val()+key);
+                    $("#hid_adm").val(res2);
                 }
         }
         $(".denomination").removeClass("selected").prop("checked", false);
