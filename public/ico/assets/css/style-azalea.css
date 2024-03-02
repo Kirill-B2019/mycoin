@@ -3139,7 +3139,7 @@ ul.progress-info { display: flex; justify-content: space-between; }
 
 .preloader.no-default:before, .preloader.no-default:after { position: absolute; top: 0; left: 0; height: 100%; transition: all .6s; background-color: #0f1932; }
 
-.preloader-alt:after, .preloader-alt:before { background: rgb(255, 255, 255); }
+.preloader-alt:after, .preloader-alt:before { background: #15181d; }
 
 .page-loaded .preloader.no-split:before, .page-loaded .preloader.no-split:after { transform: translate(0, 0); }
 
