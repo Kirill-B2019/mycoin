@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Adm;
 
 
 use App\Http\Controllers\Controller;
+use App\Models\BlockChain\Block;
+use App\Models\BlockChain\Chain;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -14,9 +16,14 @@ class AdmPaymentOrderController extends Controller
     public function reception(Request $Request)
     {
 
+
+        $myBlockchain = new Chain();
+        $res = $myBlockchain->addBlock(new Block( ['amount' => 350]));
+        dd(json_decode($res['data'])->amount);
+
         if($Request->get('email'))
         {
-           return $this->findeOfCreateOnMail($Request->get('email'));
+          // return $this->findeOfCreateOnMail($Request->get('email'));
         }
 
         if($Request->get('ammount'));

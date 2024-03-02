@@ -2,58 +2,47 @@
 
 namespace App\Models\BlockChain;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Block extends Model
 {
-    use HasFactory;
-    private int $index;
-    private string $hash;
-    private string $previousHash;
-    private  int $timestamp;
-    private $data;
-    private string $dateJson;
-    public function __construct(int $index, string $previousHash = '', $data)
+
+    protected $guarded = [];
+    protected $table = 'blocks';
+
+    public int $index;
+    public string $timestamp;
+    public $data;
+    public string $previousHash;
+    public string $hash;
+    public function __construct( $data=NULL)
     {
-       $this->index = $index;
-       $this->previousHash = $previousHash;
-       $this->data = json_encode($data);
-       $this->timestamp = time();
+
+       $this->index = $this->getIndexAndHash()['index'];
+       $this->previousHash = $this->getIndexAndHash()['preview_hash'];
+       $this->data = $data;
+       $this->timestamp = now()->timestamp;
+       $this->hash = $this->calculateHash();
 
     }
 
-
-    public function setHash(string $hash): self
+    public function calculateHash()
     {
-        $this->hash = $hash;
-        return $this;
+        return hash(
+            'sha256',
+            $this->index.$this->previousHash.$this->timestamp.json_encode($this->data),
+        );
     }
 
-    public function getIndex(): int
-    {
-        return $this->index;
-    }
 
-    public function getHash(): string
+    public function getIndexAndHash()
     {
-        return $this->hash;
-    }
-
-    public function getPreviousHash(): string
-    {
-        return $this->previousHash;
-    }
-
-    public function getTimeStamp(): int
-    {
-        return $this->timestamp;
-    }
-
-    public function getData(): string
-    {
-        return $this->data;
-    }
-
+        $res = DB::table('blocks')->latest()->first();
+        $aRes = ['index'=>$res->index+1, 'preview_hash'=>$res->preview_hash];
+    return $aRes;
+}
 
 }
