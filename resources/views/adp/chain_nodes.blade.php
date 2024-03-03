@@ -53,15 +53,18 @@
                                                                 <div class="col">
                                                                     <div class="form-group">
                                                                         IP:<span style="color: #fb5e1c">*</span>&nbsp;<input
-                                                                                id="name" type="text"
-                                                                                class="form-control @error('nodeIP') is-invalid @enderror"
-                                                                                name="nodeIP" required>
+                                                                                id="custom-ipadd" type="text"
+                                                                                class="form-control input-ip @error('nodeIP') is-invalid @enderror"
+                                                                                name="nodeIP" placeholder="___.___.___.___" maxlength="15" required>
                                                                         @error('name')
                                                                         <span class="invalid-feedback" role="alert">
                                                                                 <strong>{{ $message }}</strong>
                                                                             </span>
                                                                         @enderror
                                                                     </div>
+
+
+
                                                                 </div>
                                                                 <div class="col">
                                                                     <div class="form-group">
