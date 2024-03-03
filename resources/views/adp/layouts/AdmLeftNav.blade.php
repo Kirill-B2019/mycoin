@@ -31,24 +31,31 @@
             </li>
 
         </ul>
-        @anyperms('EmissionManagement')
+        @anyperms('BLOCKCHAINManagement')
         <!-- меню админа slug администратора площадки-->
         <p class="text-muted nav-heading mt-4 mb-1">
-            <span>Управление Эмиссией</span>
+            <span>Управление BLOCKCHAIN</span>
         </p>
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item dropdown">
-                <a href="#WalletAdm" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                <a href="#BLOCKCHAIN" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                     <i class="fe fe-credit-card fe-16"></i>
-                    <span class="ml-3 item-text">Эмиссия</span>
+                    <span class="ml-3 item-text">BLOCKCHAIN</span>
                 </a>
-                <ul class="collapse list-unstyled pl-4 w-100" id="WalletAdm">
+                <ul class="collapse list-unstyled pl-4 w-100" id="BLOCKCHAIN">
                     <li class="nav-item">
-                        <a class="nav-link pl-3" href="{{route('adp.wallet_balance')}}"><span class="ml-1 item-text">Баланс</span>
+                        <a class="nav-link pl-3" href="{{route('adp.chain_nodes')}}"><span class="ml-1 item-text">Ноды</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="collapse list-unstyled pl-4 w-100" id="BLOCKCHAIN">
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="#"><span class="ml-1 item-text">Контракты</span>
                         </a>
                     </li>
                 </ul>
             </li>
+
         </ul>
         @endanyperms
 

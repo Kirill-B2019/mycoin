@@ -29,6 +29,7 @@ use App\Http\Controllers\AuthUser\UserSettingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ICO\MCPTokenController;
 use App\Http\Controllers\MainPageController;
+use App\Http\Controllers\MCPChain\ChainNodeController;
 use App\Http\Controllers\Public\PublicDonatController;
 use App\Http\Controllers\Public\PublicFaqCategoryController;
 use App\Http\Controllers\Public\PublicProjectController;
@@ -207,6 +208,12 @@ Route::middleware(['auth'])->group(function()
         Route::post('/block_important/delete/{id}', [AdmBlockImportantController::class, 'delete'])->name('adp.block_important.delete');
         Route::post('/new-block_important', [AdmBlockImportantController::class, 'create'])->name('adp.new-block_important');
 
+
+        // Админ блок BLOCKCHAIN ноды
+        Route::get('/nodes', [ChainNodeController::class, 'index'])->name('adp.chain_nodes');
+        Route::post('/nodes/update/{id}', [ChainNodeController::class, 'update'])->name('adp.chain_nodes.update');
+        Route::post('/nodes/delete/{id}', [ChainNodeController::class, 'delete'])->name('adp.chain_nodes.delete');
+        Route::post('/new-nodes', [ChainNodeController::class, 'create'])->name('adp.new-chain_nodes');
 
 
 

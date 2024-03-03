@@ -3,6 +3,7 @@
 namespace App\Models;
 
 
+
 use App\Traits\HasRolesAndPermissions;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

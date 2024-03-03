@@ -17,22 +17,24 @@ class AdmPaymentOrderController extends Controller
     {
 
 
-        $myBlockchain = new Chain();
-        $res = $myBlockchain->addBlock(new Block( ['amount' => 350]));
-        dd($res);
-        //dd(json_decode($res['data'])->amount);
+dd('тут');
 
         if($Request->get('email'))
         {
-          // return $this->findeOfCreateOnMail($Request->get('email'));
+          $user =  $this->findeOfCreateOnMail($Request->get('email'));
         }
 
         if($Request->get('ammount'));
         {
-
+            $myBlockchain = new Chain();
+            $res = $myBlockchain->addBlock(new Block( [
+                'user'=>$user->id,
+                'amount' => $Request->get('amount'),
+                "mcp_amount" => $Request->get('mcp_amount'),
+            ]));
         }
 
-        if($Request->get('sender_'));
+        if($Request->get('sender_adress'));
         {
 
         }
