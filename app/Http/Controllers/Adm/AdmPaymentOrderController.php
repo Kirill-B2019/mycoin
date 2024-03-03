@@ -19,7 +19,8 @@ class AdmPaymentOrderController extends Controller
 
         $myBlockchain = new Chain();
         $res = $myBlockchain->addBlock(new Block( ['amount' => 350]));
-        dd(json_decode($res['data'])->amount);
+        dd($res);
+        //dd(json_decode($res['data'])->amount);
 
         if($Request->get('email'))
         {
