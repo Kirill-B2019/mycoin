@@ -17,7 +17,7 @@ class AdmPaymentOrderController extends Controller
     {
 
 
-dd('тут');
+
 
         if($Request->get('email'))
         {
@@ -28,21 +28,19 @@ dd('тут');
         {
             $myBlockchain = new Chain();
             $res = $myBlockchain->addBlock(new Block( [
-                'user'=>$user->id,
+             'user'=>$user->id,
                 'amount' => $Request->get('amount'),
-                "mcp_amount" => $Request->get('mcp_amount'),
+               "mcp_amount" => $Request->get('mcp_amount'),
             ]));
+
+            dd($myBlockchain);
         }
 
         if($Request->get('sender_adress'));
         {
 
         }
-      /*  "mcp_amount" => "733.891091"
-      "_token" => "jN2hvPgYUBUR1tbDVWLPSOx9LzilSQQFL7r095jH"
-      "amount" => "50"
-      "sender_adress" => null
-      "email" => "wewe@we.ew"*/
+
     }
 
     public function findeOfCreateOnMail($mail)

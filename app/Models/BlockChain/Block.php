@@ -11,24 +11,11 @@ class Block extends Model
 {
 
     protected $guarded = [];
-    protected $table = 'blocks';
+    public $incrementing = false;
 
-    public int $index;
-    public string $timestamp;
-    public $data;
-    public string $previousHash;
-    public string $hash;
-    public function __construct( $data=NULL)
-    {
-
-       $this->index = $this->getIndexAndHash()['index'];
-       $this->previousHash = $this->getIndexAndHash()['preview_hash'];
-       $this->data = $data;
-       $this->timestamp = now()->timestamp;
-       $this->hash = $this->calculateHash();
-
-    }
-
+    protected $casts =[
+        'data' => \App\Casts\BlockDataContext::class,
+    ];
     public function calculateHash()
     {
         return hash(
@@ -38,10 +25,10 @@ class Block extends Model
     }
 
 
-    public function getIndexAndHash()
+    public function getLastIndex()
     {
-        $res = DB::table('blocks')->latest()->first();
-        $aRes = ['index'=>$res->index+1, 'preview_hash'=>$res->preview_hash];
+        $res = Block::query()->latest()->first();
+        $aRes = ['index'=>$res->index+1];
     return $aRes;
 }
 

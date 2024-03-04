@@ -41,11 +41,11 @@ class Chain extends Model
         $lastBlock = $this->getLatestBlock();
 
         $res= Block::create([
-            'index' =>  $newBlock->index,
-            'hash' =>   $newBlock->calculateHash(),
+            'index' =>  $newBlock->getLastIndex(),
+            'hash' =>   $newBlock->hash,
             'preview_hash' => $lastBlock['hash'],
-            'data'=>json_encode($newBlock->data),
-            'timestamp' => $newBlock->timestamp,
+            'data'=> json_encode($newBlock->data),
+            'timestamp' => now()->timestamp,
         ]);
             return $res;
         }
