@@ -3,7 +3,7 @@
 namespace App\Traits;
 use App\Models\Role;
 use App\Models\Permission;
-use http\Env;
+
 
 trait HasRolesAndPermissions
 {

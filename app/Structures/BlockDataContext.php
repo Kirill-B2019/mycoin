@@ -1,19 +1,22 @@
 <?php
 
-namespace App\Models\BlockChain;
+namespace App\Structures;
 
+use App\Models\BlockChain\Block;
+use App\Traits\HasBlockChain;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
+
+
 
 class BlockDataContext implements Jsonable, Arrayable, \Stringable
 {
 
-
-
-    public $contract = '';
+ use HasBlockChain;
+    public string $contract;
     public $decimal_places = 6;
-    public $amount = NULL;
-    public $sender ='';
+    public $amount = 0;
+    public $sender = '';
     public $recipient ='';
     public $fee = 0;
     public $fee_recipient ='';
@@ -22,24 +25,25 @@ class BlockDataContext implements Jsonable, Arrayable, \Stringable
 
     public function __toString()
     {
-        return $this->toJson(0);
+        return $this->toJson();
     }
     public static function fromArray($data): self
- {
+    {
+        $instance = new self();
 
-     $instance = new self();
+        $instance->contract = $data['contract'] ?? $instance->getContract();
+        $instance->decimal_places = isset($data['decimal_places']) ? $data['decimal_places'] : NULL;
+        $instance->amount = isset($data['amount']) ? $data['amount'] : NULL;
+        $instance->sender = isset($data['sender']) ? $data['sender'] : NULL;
+        $instance->recipient = isset($data['recipient']) ? $data['recipient'] : NULL;
+        $instance->fee = isset($data['fee']) ? $data['fee'] : NULL;
+        $instance->fee_recipient = isset($data['fee_recipient']) ? $data['fee_recipient'] : NULL;
+        $instance->escrow = $data['escrow'] ?? false;
+        $instance->system_message = isset($data['system_message']) ? $data['system_message'] : NULL;
 
-     $instance->contract = $data['contract'] ?: '';
-     $instance->decimal_places=$data['decimal_places'] ?: 6;
-     $instance->amount=$data['amount'] ?: NULL;
-     $instance->sender=$data['sender'] ?: NULL;
-     $instance->recipient=$data['recipient'] ?: NULL;
-     $instance->fee=$data['fee'] ?: 0;
-     $instance->fee_recipient=$data['fee_recipient'] ?: NULL;
-     $instance->escrow=$data['escrow'] ?: false;
-     $instance->system_message=$data['system_message'] ?: '';
-     return $instance;
- }
+        return $instance;
+    }
+
 
     public function toJson($options = 0): false|string
     {

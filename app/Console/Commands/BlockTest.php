@@ -3,9 +3,10 @@
 namespace App\Console\Commands;
 
 use App\Models\BlockChain\Block;
-use App\Models\BlockChain\BlockDataContext;
-use App\Models\BlockChain\Chain;
+use App\Structures\BlockDataContext;
+use App\Structures\BlockDataContext as BlockDataContextStructure;
 use Illuminate\Console\Command;
+
 
 class BlockTest extends Command
 {
@@ -25,10 +26,23 @@ class BlockTest extends Command
 
     /**
      *
-     * @var BlockDataContext $block
+     * @var Block $block
      */
     public function handle()
     {
-        return new Block();
+        $block = Block::query()->latest()->first(); // Получаем объект модели Block
+
+        if ($block) {
+            $blockData = $block->toArray(); // Преобразуем объект модели в массив
+            $blockCollection = collect([$blockData])->map(function ($item) {
+                dd(new Block($item));
+                return ;
+
+            });
+        }
+
+
+
+        return 0;
     }
 }

@@ -2,24 +2,19 @@
 
 namespace App\Models\BlockChain;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+use App\Structures\BlockDataContext;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Redirect;
+
 
 class Chain extends Model
 {
-    use HasFactory;
-    private array $blocks;
-    private array $chain;
+    private mixed $index;
+    private mixed $previousHash;
+    private mixed $timestamp;
+    private mixed $data;
 
-    public function __construct()
-    {
-
-    }
-
-
-
-    private function createGenesisBlock()
+     private function createGenesisBlock()
     {
         if(!Block::latest()->first())
         {
@@ -35,21 +30,22 @@ class Chain extends Model
 
     public function addBlock(Block $newBlock)
     {
-
-        $newBlock->hash = $newBlock->calculateHash();
-        if($this->isChainValid($newBlock->hash)){
         $lastBlock = $this->getLatestBlock();
-
-        $res= Block::create([
-            'index' =>  $newBlock->getLastIndex(),
-            'hash' =>   $newBlock->hash,
-            'preview_hash' => $lastBlock['hash'],
-            'data'=> json_encode($newBlock->data),
-            'timestamp' => now()->timestamp,
-        ]);
-            return $res;
+        $newBlock->index = $lastBlock['index'] + 1;
+        $newBlock->preview_hash = $lastBlock['hash'];
+        $newBlock->timestamp = now()->timestamp;
+        $newBlock->hash = $this->calculateHash($newBlock);
+        $newBlock->data = BlockDataContext::fromArray($newBlock->data);
+        if($this->isChainValid($newBlock->hash)){
+            return Block::create([
+              'index' =>  $newBlock->index,
+              'hash' =>   $newBlock->hash,
+              'preview_hash' => $newBlock->preview_hash,
+              'data'=> $newBlock->data,
+              'timestamp' => $newBlock->timestamp,
+          ]);
         }
-        return false;
+        return new \InvalidArgumentException('Ошибка создания блока', 404);
     }
 
     public function isChainValid($newHash): bool
@@ -67,6 +63,15 @@ class Chain extends Model
             }
         }
         return true;
+    }
+
+    public function calculateHash(Block $block): string
+    {
+
+        return hash(
+            'sha256',
+            $block->index.$block->preview_hash.$block->timestamp.json_encode($block->data),
+        );
     }
 
 }
