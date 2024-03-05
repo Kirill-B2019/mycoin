@@ -2,7 +2,7 @@
 
 namespace App\Structures;
 
-use App\Models\BlockChain\Block;
+
 use App\Traits\HasBlockChain;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;

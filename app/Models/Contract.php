@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Casts\ContractDataCriteriaContext;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Casts\ContractDataExecuteContext;
 use Illuminate\Database\Eloquent\Model;
 
 class Contract extends Model
@@ -20,8 +20,10 @@ class Contract extends Model
     public $active;
 
     protected $casts=[
-        'criteria' => ContractDataCriteriaContext::class
+        'criteria' => ContractDataCriteriaContext::class,
+        'execute' => ContractDataExecuteContext::class
     ];
+
     public function __construct($criteria = NUll, $execute = NULL, $data = NULL)
     {
         $this->criteria = $criteria;

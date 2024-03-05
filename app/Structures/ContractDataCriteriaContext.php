@@ -2,7 +2,7 @@
 
 namespace App\Structures;
 
-use AllowDynamicProperties;
+
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
 
