@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\BlockChain\Block;
+use App\Models\Contract;
 use App\Structures\BlockDataContext;
 use App\Structures\BlockDataContext as BlockDataContextStructure;
 use Illuminate\Console\Command;
@@ -30,18 +31,9 @@ class BlockTest extends Command
      */
     public function handle()
     {
-        $block = Block::query()->latest()->first(); // Получаем объект модели Block
+        $block = new Contract();
 
-        if ($block) {
-            $blockData = $block->toArray(); // Преобразуем объект модели в массив
-            $blockCollection = collect([$blockData])->map(function ($item) {
-                dd(new Block($item));
-                return ;
-
-            });
-        }
-
-
+        dd($block->toArray());
 
         return 0;
     }
