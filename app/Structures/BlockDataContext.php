@@ -17,8 +17,8 @@ class BlockDataContext implements Jsonable, Arrayable, \Stringable
     public $recipient ='';
     public $fee = 0;
     public $fee_recipient ='';
-    public bool $escrow = false;
-    public string $system_message ='';
+    public $escrow = false;
+    public $system_message ='';
 
     public function __toString()
     {
@@ -41,12 +41,12 @@ class BlockDataContext implements Jsonable, Arrayable, \Stringable
      return $instance;
  }
 
-    public function toJson($options = 0)
+    public function toJson($options = 0): false|string
     {
         return json_encode($this);
     }
 
-    public function toArray()
+    public function toArray(): array
     {
         return [
             'contract'=>$this->contract,
