@@ -53,7 +53,7 @@
                 <div class="nk-block nk-block-header nk-block-sm my-auto">
                     <div class="container pt-5">
                         <div class="banner-caption text-center">
-                            <h1 class="title title-xl-s2 ttu animated" data-animate="fadeInUp" data-delay="0.7">ICO— первоначальное размещение токенов <span class="bg-orange-30">MCP</span> Security Tokens</h1>
+                            <h1 class="title title-xl-s2 ttu animated" data-animate="fadeInUp" data-delay="0.7">ICO— первоначальное размещение <span class="bg-orange-30">MCP</span> Security Tokens (MCP Coin)</h1>
                             <h1 class="title title-xs-2 ttu animated text-muted" data-animate="fadeInUp" data-delay="0.9">Токенизированная криптоинвестиционная проектная платформа с собственным BLOCKCHAIN</h1>
                             <div class="row justify-content-center pb-3">
                                 <div class="col-sm-12 col-xl-12 col-xxl-12">
