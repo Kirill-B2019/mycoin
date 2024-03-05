@@ -5,7 +5,7 @@
 @section('content')
     <div class="wrapper">
         <main role="main" class="main-content h-100">
-            Профиль
+            Кабинет {{}}
         </main> <!-- MainPage -->
     </div> <!-- .wrapper -->
 @endsection

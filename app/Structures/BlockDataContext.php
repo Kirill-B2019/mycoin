@@ -13,7 +13,7 @@ class BlockDataContext implements Jsonable, Arrayable, \Stringable
 {
 
  use HasBlockChain;
-    public string $contract;
+    public  $contract;
     public $decimal_places = 6;
     public $amount = 0;
     public $sender = '';
@@ -31,14 +31,14 @@ class BlockDataContext implements Jsonable, Arrayable, \Stringable
     {
         $instance = new self();
 
-        $instance->contract = $data['contract'] ?? $instance->getContract();
-        $instance->decimal_places = isset($data['decimal_places']) ? $data['decimal_places'] : NULL;
+        $instance->contract = isset($data['contract']) ? $data['contract'] : $instance->getContract();
+        $instance->decimal_places = isset($data['decimal_places']) ? $data['decimal_places'] : $instance->getDecimalPlaces();
         $instance->amount = isset($data['amount']) ? $data['amount'] : NULL;
         $instance->sender = isset($data['sender']) ? $data['sender'] : NULL;
         $instance->recipient = isset($data['recipient']) ? $data['recipient'] : NULL;
-        $instance->fee = isset($data['fee']) ? $data['fee'] : NULL;
-        $instance->fee_recipient = isset($data['fee_recipient']) ? $data['fee_recipient'] : NULL;
-        $instance->escrow = $data['escrow'] ?? false;
+        $instance->fee = isset($data['fee']) ? $data['fee']  : $instance->getFee();
+        $instance->fee_recipient = isset($data['fee_recipient']) ? $data['fee_recipient'] : $instance->getFeeRecipient();
+        $instance->escrow = isset($data['escrow'])? $data['escrow'] : false;
         $instance->system_message = isset($data['system_message']) ? $data['system_message'] : NULL;
 
         return $instance;

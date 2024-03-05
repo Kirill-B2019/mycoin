@@ -28,11 +28,9 @@ class AdmPaymentOrderController extends Controller
         {
             $myBlockchain = new Chain();
             $res = $myBlockchain->addBlock(new Block( [
-                 'user'=>$user->id,
+
                 'amount' => 5555,
-                'amount22' => 2345243,
-                'fdsgfsgfsfg'=>777,
-                 "mcp_amount" => $Request->get('mcp_amount'),
+                "mcp_amount" => $Request->get('mcp_amount'),
             ]));
 
             dd($res);

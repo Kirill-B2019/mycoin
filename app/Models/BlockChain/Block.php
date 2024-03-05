@@ -21,16 +21,13 @@ use Illuminate\Database\Eloquent\Model;
     public mixed $preview_hash;
     public mixed $timestamp;
     public mixed $hash;
+    //
     protected $guarded = [];
     public $incrementing = false;
-    /**
-     * Атрибуты, которые должны быть типизированы.
-     *
-     * @var array
-     */
     protected $casts =[
         'data' => BlockDataContext::class,
     ];
+
     public function __construct($data = NUll)
    {
        $this->data = $data;

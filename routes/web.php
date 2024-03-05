@@ -34,9 +34,9 @@ use App\Http\Controllers\Public\PublicDonatController;
 use App\Http\Controllers\Public\PublicFaqCategoryController;
 use App\Http\Controllers\Public\PublicProjectController;
 use App\Http\Controllers\Public\PublicSubscribeController;
-use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -75,13 +75,6 @@ Route::group(['domain'=>getenv('APP_DOMAIN_ICO')],function (){
     Route::get('/add_project', function () { return view('root.add_project'); })->name('root.add_project');
     Route::get('/add_project_rule', function () { return view('root.add_project_rule'); })->name('root.add_project_rule');
     Route::get('/add_project_pricing', function () { return view('root.add_project_pricing'); })->name('root.add_project_pricing');
-
-
-
-
-// На ICO
-
-
 
 
 

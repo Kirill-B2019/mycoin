@@ -3,7 +3,7 @@
 namespace App\Casts;
 
 
-use App\Models\BlockChain\Block;
+
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 use App\Structures\BlockDataContext as BlockDataContextStructure;
 use Illuminate\Database\Eloquent\Model;

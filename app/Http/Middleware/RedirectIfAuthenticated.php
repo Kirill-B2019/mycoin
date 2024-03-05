@@ -2,33 +2,44 @@
 
 namespace App\Http\Middleware;
 
-use App\Providers\RouteServiceProvider;
+use AllowDynamicProperties;
+
 use Closure;
-use Illuminate\Http\Request;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 
 class RedirectIfAuthenticated
 {
+
+    /**
+     * The Guard implementation.
+     *
+     * @var Guard
+     */
+    protected Guard $auth;
+
+    /**
+     * Create a new filter instance.
+     *
+     * @param  Guard  $auth
+     * @return void
+     */
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
     /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @param  string|null  ...$guards
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
+     * @param  \Closure  $next
+     * @param string|null $guard
+     * @return mixed
      */
-    public function handle(Request $request, Closure $next, ...$guards)
+    public function handle($request, Closure $next, string $guard = null): mixed
     {
-        $guards = empty($guards) ? [null] : $guards;
-
-        foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
-
-
-                return redirect(RouteServiceProvider::HOME);
-                //return Redirect::route(getenv('APP_DOMAIN_CABINET'));
-            }
+        if (!$request->is('/logout') && Auth::guard($guard)->check()) {
+            return redirect('/cabinet/main');
         }
 
         return $next($request);

@@ -8,9 +8,24 @@ use App\Models\BlockChain\Block;
 trait HasBlockChain
 {
 
-    public function getContract()
+    //TODO допиать все гетеры
+    public function getContract(): string
     {
-            return '3333333';
+            return 'MainContractAdress';
     }
+    public function getDecimalPlaces(): int
+    {
+        return 0;
+    }
+
+    public function getFee(): int
+    {
+        return 0;
+    }
+    public function getFeeRecipient(): string
+    {
+        return 'feeRecipient';
+    }
+
 }
 
