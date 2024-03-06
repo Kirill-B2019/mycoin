@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Adm;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AdminController;
 use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
-class AdmUserController extends Controller
+class AdmUserController extends AdminController
 {
     public function index(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {

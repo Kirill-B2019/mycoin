@@ -33,7 +33,7 @@ class BlockTest extends Command
     {
         $block = new Contract();
 
-        dd($block->toArray());
+        dd($block['execute']);
 
         return 0;
     }

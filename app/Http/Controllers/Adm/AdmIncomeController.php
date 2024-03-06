@@ -2,20 +2,16 @@
 
 namespace App\Http\Controllers\Adm;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AdminController;
 use App\Models\Income;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
-class AdmIncomeController extends Controller
+class AdmIncomeController extends AdminController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
-     */
-    public function index()
+
+    public function index(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
 
         return view('adp.incomes',['incomes'=>Income::all()]);

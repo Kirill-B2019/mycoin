@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Adm;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AdminController;
 use App\Models\Category;
 use App\Models\Project;
 use App\Models\ProjectImage;
@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
-class AdmProjectsController extends Controller
+class AdmProjectsController extends AdminController
 {
 
     // ПРОЕКТЫ

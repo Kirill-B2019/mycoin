@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Adm;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AdminController;
 use App\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
-class AdmPermissionController extends Controller
+class AdmPermissionController extends AdminController
 {
     public function index()
     {

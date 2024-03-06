@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Adm;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AdminController;
 use App\Models\OrderStatus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
-class AdmOrderStatusController extends Controller
+class AdmOrderStatusController extends AdminController
 {
     // категории
     public function index()

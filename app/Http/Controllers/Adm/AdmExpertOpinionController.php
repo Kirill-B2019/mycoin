@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Adm;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Controllers\AdminController;
 
-class AdmExpertOpinionController extends Controller
+
+class AdmExpertOpinionController extends AdminController
 {
     //
 }

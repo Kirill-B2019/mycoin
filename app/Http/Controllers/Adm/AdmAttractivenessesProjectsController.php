@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Adm;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AdminController;
 use App\Models\Attractiveness;
 use App\Models\AttractivenessesProject;
 use App\Models\LetterIndex;
@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
-class AdmAttractivenessesProjectsController extends Controller
+class AdmAttractivenessesProjectsController extends AdminController
 {
     public function index($project_id)
     {

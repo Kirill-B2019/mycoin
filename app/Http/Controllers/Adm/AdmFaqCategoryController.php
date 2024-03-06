@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Adm;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AdminController;
 use App\Models\FaqCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
-class AdmFaqCategoryController extends Controller
+class AdmFaqCategoryController extends AdminController
 {
     // Категории FAQ
 

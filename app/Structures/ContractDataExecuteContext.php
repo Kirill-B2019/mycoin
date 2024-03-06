@@ -10,9 +10,9 @@ class ContractDataExecuteContext implements Jsonable, Arrayable
 
 
     private $stop_contract;
-    private string $executed;
+    private  $executed;
     private $executed_at;
-    private string$not_executed;
+    private $not_executed;
     private $not_executed_at;
 
     public static function fromcExecuteArray($data): self

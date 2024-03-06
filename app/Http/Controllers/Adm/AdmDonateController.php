@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Adm;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AdminController;
 
-class AdmDonateController extends Controller
+
+class AdmDonateController extends AdminController
 {
 
 

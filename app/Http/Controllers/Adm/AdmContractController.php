@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Adm;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AdminController;
 
-class AdmContractController extends Controller
+class AdmContractController extends AdminController
 {
     //
 }

@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers\Adm;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AdminController;
 use App\Models\Permission;
 use App\Models\Role;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
-class AdmRoleController extends Controller
+class AdmRoleController extends AdminController
 {
     /**
      * Display a listing of the resource.

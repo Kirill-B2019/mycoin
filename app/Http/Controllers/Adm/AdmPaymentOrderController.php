@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Adm;
 
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AdminController;
 use App\Models\BlockChain\Block;
 use App\Models\BlockChain\Chain;
 use App\Models\Role;
@@ -11,7 +11,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Mail;
 
-class AdmPaymentOrderController extends Controller
+class AdmPaymentOrderController extends AdminController
 {
     public function reception(Request $Request)
     {

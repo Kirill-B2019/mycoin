@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Adm;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AdminController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AdmImageUploadController extends Controller
+class AdmImageUploadController extends AdminController
 {
     public function storeImage(Request $request)
     {
