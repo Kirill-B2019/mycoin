@@ -55,7 +55,7 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
-        'AuthUser.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'sub_auth' => \App\Http\Middleware\SubdomainAuth::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
@@ -67,7 +67,8 @@ class Kernel extends HttpKernel
         //Проверка админа
         'isadmin' => \App\Http\Middleware\IsAdmin::class,
         //Роли и пермишены
-        'role'  =>  \App\Http\Middleware\RoleMiddleware::class,
+	    'role' => \App\Http\Middleware\CheckUserRole::class,
+	    'perm' => \App\Http\Middleware\CheckUserPermission::class,
 
     ];
 }

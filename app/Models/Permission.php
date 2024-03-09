@@ -2,19 +2,33 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Permission extends Model
 {
-    use HasFactory, SoftDeletes;
+    use SoftDeletes;
 
     protected $guarded= [];
 
-    public function roles(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
-    {
-        return $this->belongsToMany(Role::class,'permissions_roles');
+    /**
+     * Связь модели Permission с моделью Role, позволяет получить
+     * все роли, куда входит это право
+     */
+    public function roles() {
+        return $this
+            ->belongsToMany(Role::class,'permissions_roles');
     }
+    /**
+     * Связь модели Permission с моделью User, позволяет получить
+     * всех пользователей с этим правом
+     */
+    public function users() {
+        return $this
+            ->belongsToMany(User::class,'permissions_users');
+    }
+
+
+
 
 }

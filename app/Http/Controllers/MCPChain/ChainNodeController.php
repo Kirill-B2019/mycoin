@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\MCPChain;
 
 use App\Http\Controllers\Controller;
-use App\Models\BlockChain\Chain;
 use App\Models\BlockChain\ChainNode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -15,8 +14,7 @@ class ChainNodeController extends Controller
 
     public function index()
     {
-        /* $model = ChainNode::find(1);
-        dd( $model->getAllColumnsNames() );*/
+
         $chainNodes = ChainNode::all();
         return view('adp.chain_nodes', compact(['chainNodes']));
     }

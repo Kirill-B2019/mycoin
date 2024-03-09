@@ -12,8 +12,18 @@ trait HasRolesAndPermissions
         return $this->roles()->first();
     }
 
-    public function getAllRoles(){
-        return $this->roles()->get();
+    /**
+     * Возвращает массив всех прав текущего пользователя
+     */
+    public function getAllPerms() {
+        return $this->permissions->pluck('slug')->toArray();
+    }
+
+    /**
+    * Возвращает массив всех ролей текущего пользователя
+    */
+    public function getAllRoles() {
+        return $this->roles->pluck('slug')->toArray();
     }
 
     public function roles() {
@@ -33,6 +43,7 @@ trait HasRolesAndPermissions
      * Имеет текущий пользователь роль $role?
      */
     public function hasRole($role) {
+
         return $this->roles->contains('slug', $role);
     }
 

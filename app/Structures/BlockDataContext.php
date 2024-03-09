@@ -9,6 +9,7 @@ use Illuminate\Contracts\Support\Jsonable;
 
 
 
+
 class BlockDataContext implements Jsonable, Arrayable, \Stringable
 {
 
@@ -22,6 +23,10 @@ class BlockDataContext implements Jsonable, Arrayable, \Stringable
     public $fee_recipient ='';
     public $escrow = false;
     public $system_message ='';
+    private $role;
+    private $PubKey;
+    private $project_id;
+    private $atr;
 
     public function __toString()
     {
@@ -30,8 +35,12 @@ class BlockDataContext implements Jsonable, Arrayable, \Stringable
     public static function fromArray($data): self
     {
         $instance = new self();
-
+        $instance->atr = $instance->getBlockAttibutes(isset($data['project_id']) ? $data['project_id'] : 1);
+        $instance->project_id = isset($data['project_id']) ? $data['project_id'] : $instance->atr['contract'];
+        $instance->contract = isset($data['contract']) ? $data['contract'] : 0;
+        $instance->PubKey = isset($data['PubKey']) ? $data['PubKey'] : $instance->getPubKey();
         $instance->contract = isset($data['contract']) ? $data['contract'] : $instance->getContract();
+        $instance->role = isset($data['role']) ? $data['role'] : $instance->getRole();
         $instance->decimal_places = isset($data['decimal_places']) ? $data['decimal_places'] : $instance->getDecimalPlaces();
         $instance->amount = isset($data['amount']) ? $data['amount'] : NULL;
         $instance->sender = isset($data['sender']) ? $data['sender'] : NULL;
@@ -53,7 +62,11 @@ class BlockDataContext implements Jsonable, Arrayable, \Stringable
     public function toArray(): array
     {
         return [
+            'project_id'=>$this->project_id,
+            'atr'=>$this->atr,
             'contract'=>$this->contract,
+            'role'=>$this->role,
+            'PubKey'=>$this->PubKey,
             'decimal_places'=>$this->decimal_places,
             'amount'=>$this->amount,
             'sender'=>$this->sender,

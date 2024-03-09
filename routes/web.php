@@ -82,7 +82,7 @@ Auth::routes();
 // Админка
 
 
-Route::middleware(['auth'])->group(function()
+Route::middleware(['auth','role:SuperAdmin'])->group(function()
 {
     Route::group([
         'prefix' => 'adp',
@@ -90,7 +90,7 @@ Route::middleware(['auth'])->group(function()
         ], function (){
 
 
-        Route::get('/home', function () { return view('adp.home'); })->name('adp.home');
+        Route::get('/home', function () { return view('adp.home'); })->name('adp.home')->middleware(['role:SuperAdmin']);
         //Загрузка картинки
         Route::post('image-upload', [AdmImageUploadController::class, 'storeImage'])->name('image.upload');
 

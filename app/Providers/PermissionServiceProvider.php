@@ -24,19 +24,19 @@ class PermissionServiceProvider extends ServiceProvider
     {
 
         Blade::directive('perm', function ($perm) {
-            return "<?php if(Auth()->check() && Auth()->user()->hasPermAnyWay({$perm})): ?>";
+            return "<?php if(auth()->check() && auth()->user()->hasPermAnyWay({$perm})): ?>";
         });
         Blade::directive('endperm', function ($perm) {
             return "<?php endif; ?>";
         });
         Blade::directive('allperms', function ($perms) {
-            return "<?php if(Auth()->check() && Auth()->user()->hasAllPerms({$perms})): ?>";
+            return "<?php if(auth()->check() && auth()->user()->hasAllPerms({$perms})): ?>";
         });
         Blade::directive('endallperms', function ($perms) {
             return "<?php endif; ?>";
         });
         Blade::directive('anyperms', function ($perms) {
-            return "<?php if(Auth()->check() && Auth()->user()->hasAnyPerms({$perms})): ?>";
+            return "<?php if(auth()->check() && auth()->user()->hasAnyPerms({$perms})): ?>";
         });
         Blade::directive('endanyperms', function ($perms) {
             return "<?php endif; ?>";
