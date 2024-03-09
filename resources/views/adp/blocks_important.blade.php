@@ -15,7 +15,7 @@
                                     <div class="card-body">
                                         <!-- table -->
                                         <button class="btn btn-primary float-right ml-3" type="button"
-                                                data-toggle="modal" data-target="#AddNewCat">Новая +
+                                                data-toggle="modal" data-target="#AddNewCat">Новый +
                                         </button>
                                         <div class="modal fade" id="AddNewCat" tabindex="-1" role="dialog"
                                              aria-labelledby="EditModalLabel" aria-hidden="true">

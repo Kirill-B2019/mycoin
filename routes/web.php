@@ -4,7 +4,8 @@ use App\Http\Controllers\Adm\AdmAttractivenessController;
 use App\Http\Controllers\Adm\AdmAttractivenessesProjectsController;
 use App\Http\Controllers\Adm\AdmBlockImportantController;
 use App\Http\Controllers\Adm\AdmCategoryController;
-use App\Http\Controllers\Adm\AdmDonateController;
+	use App\Http\Controllers\Adm\AdmCurrencyController;
+	use App\Http\Controllers\Adm\AdmDonateController;
 use App\Http\Controllers\Adm\AdmFaqArticleController;
 use App\Http\Controllers\Adm\AdmFaqCategoryController;
 use App\Http\Controllers\Adm\AdmImageUploadController;
@@ -82,7 +83,7 @@ Auth::routes();
 // Админка
 
 Route::group([
-	
+	'middleware' => ['auth','role:SuperAdmin'],
 	'prefix' => 'adp',
 	'base_path' =>('/adp'),
 	'domain'=>getenv('APP_DOMAIN')
@@ -204,11 +205,15 @@ Route::group([
 
         // Админ блок BLOCKCHAIN ноды
         Route::get('/nodes', [ChainNodeController::class, 'index'])->name('adp.chain_nodes');
-        Route::post('/nodes/update/{id}', [ChainNodeController::class, 'update'])->name('adp.chain_nodes.update');
-        Route::post('/nodes/delete/{id}', [ChainNodeController::class, 'delete'])->name('adp.chain_nodes.delete');
-        Route::post('/new-nodes', [ChainNodeController::class, 'create'])->name('adp.new-chain_nodes');
-
-
+	        Route::post('/nodes/update/{id}', [ChainNodeController::class, 'update'])->name('adp.chain_nodes.update');
+	        Route::post('/nodes/delete/{id}', [ChainNodeController::class, 'delete'])->name('adp.chain_nodes.delete');
+	        Route::post('/new-nodes', [ChainNodeController::class, 'create'])->name('adp.new-chain_nodes');
+	
+	// Админ категории
+	Route::get('/currencies', [AdmCurrencyController::class, 'index'])->name('adp.currencies');
+		Route::post('/currencies/update/{id}', [AdmCurrencyController::class, 'update'])->name('adp.currencies.update');
+		Route::post('/currencies/delete/{id}', [AdmCurrencyController::class, 'delete'])->name('adp.currencies.delete');
+		Route::post('/new-currencies', [AdmCurrencyController::class, 'create'])->name('adp.new-currencies');
 
 
 });
