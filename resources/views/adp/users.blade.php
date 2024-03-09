@@ -59,8 +59,9 @@
                                                     </th>
 
                                                     <th>
-                                                        @if ($data->getAllRoles()->count() > 1)
+                                                        @if (count($data->getAllRoles()) > 1)
                                                             @foreach($data->getAllRoles() as $userRoles)
+
                                                                 <p class="text-muted small m-0">
                                                                     - {{$userRoles->name}}</p>
                                                             @endforeach

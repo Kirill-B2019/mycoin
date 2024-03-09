@@ -81,16 +81,16 @@ Route::group(['domain'=>getenv('APP_DOMAIN_ICO')],function (){
 Auth::routes();
 // Админка
 
+Route::group([
+	
+	'prefix' => 'adp',
+	'base_path' =>('/adp'),
+	'domain'=>getenv('APP_DOMAIN')
+	], function () {
 
-Route::middleware(['auth','role:SuperAdmin'])->group(function()
-{
-    Route::group([
-        'prefix' => 'adp',
-        'base_path' =>('/adp'),
-        ], function (){
 
 
-        Route::get('/home', function () { return view('adp.home'); })->name('adp.home')->middleware(['role:SuperAdmin']);
+        Route::get('/home', function () { return view('adp.home'); })->name('adp.home');
         //Загрузка картинки
         Route::post('image-upload', [AdmImageUploadController::class, 'storeImage'])->name('image.upload');
 
@@ -210,7 +210,7 @@ Route::middleware(['auth','role:SuperAdmin'])->group(function()
 
 
 
-    });
+
 });
 
 // Авторизованные

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Authenticate extends Middleware
 {
+	
     protected function redirectTo($request): ?string
     {
         if (! $request->expectsJson()) {
@@ -14,14 +15,14 @@ class Authenticate extends Middleware
         }
         return null;
     }
-
-    public function handle($request, Closure $next, ...$guards)
-    {
-        parent::handle($request, $next, ...$guards);
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
-        return $next($request);
-    }
+	
+	public function handle($request, Closure $next, ...$guards)
+	{
+		parent::handle($request, $next, ...$guards);
+		if (!Auth::check()) {
+			return redirect('/login');
+		}
+		
+		return $next($request);
+	}
 }

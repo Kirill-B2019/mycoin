@@ -23,7 +23,7 @@ trait HasRolesAndPermissions
     * Возвращает массив всех ролей текущего пользователя
     */
     public function getAllRoles() {
-        return $this->roles->pluck('slug')->toArray();
+        return $this->roles;
     }
 
     public function roles() {

@@ -35,10 +35,10 @@
                                                         @php $params = ['user' => $user->id, 'role' => $role->id]; @endphp
 
                                                         @if ($user->hasRole($role->slug))
-                                                            <a href="{{ route('Adm.user.unassign.role', $params) }}"
+                                                            <a href="{{ route('adp.user.unassign.role', $params) }}"
                                                                class="btn btn-sm btn-outline-light">Отменить</a>
                                                         @else
-                                                            <a href="{{ route('Adm.user.assign.role', $params) }}"
+                                                            <a href="{{ route('adp.user.assign.role', $params) }}"
                                                                class="btn btn-sm btn-primary">Выдать</a>
                                                         @endif
 
@@ -57,7 +57,7 @@
                                     <div class="card-body">
                                         <h4 class="text-primary">Права:</h4>
                                         <form
-                                            action="{{ route('Adm.user.updateUserPermission', ['user' => $user->id])}}"
+                                            action="{{ route('adp.user.updateUserPermission', ['user' => $user->id])}}"
                                             method="post">
                                             @csrf
 

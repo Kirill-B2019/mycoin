@@ -1,25 +1,28 @@
 <?php
-
-namespace App\Http\Middleware;
-
-use Closure;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
-
-class CheckUserRole
-{
-	/**
-	 * Handle an incoming request.
-	 *
-	 * @param Request $request
-	 * @param Closure $next
-	 * @return mixed
-	 */
-	public function handle($request, Closure $next, $role)
+	namespace App\Http\Middleware;
+	
+	use Closure;
+	use Illuminate\Support\Facades\Redirect;
+	
+	class CheckUserRole
 	{
-		if (!auth()->user()->hasRole($role)) {
-			return Redirect::route('cabinet.main')->with('status', 'Не Ваша роль');
+		/**
+		 * Handle the incoming request.
+		 *
+		 * @param \Illuminate\Http\Request $request
+		 * @param \Closure                 $next
+		 * @param string                   $role
+		 * @return mixed
+		 */
+		public function handle($request, Closure $next, $role): mixed
+		{
+			{
+				if (!$request->user()->hasRole($role)) {
+					return Redirect::route('cabinet.main')->with('status', 'Нет разрешения');
+				}
+				
+				return $next($request);
+			}
+			
 		}
-		return $next($request);
 	}
-}
