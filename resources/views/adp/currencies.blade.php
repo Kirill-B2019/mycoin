@@ -117,7 +117,7 @@
                                             <th>Код</th>
                                             <th>Название</th>
                                             <th>Тип</th>
-                                            <th>Статс</th>
+                                            <th>Статус</th>
                                             <th>Курс</th>
 
                                             <th></th>
@@ -131,7 +131,13 @@
                                                 <td><strong>{{$data->symbol}}</strong></td>
                                                 <td>{{$data->code}}</td>
                                                 <td>{{$data->name}}</td>
-                                                <td>{{$data->type}}</td>
+                                                <td>
+                                                    @if($data->type == 1)
+                                                       Крипто
+                                                    @elseif ($data->type == 2)
+                                                        Фиат
+                                                    @endif
+                                                </td>
                                                 <td>
                                                     @if($data->status == 1)
                                                         <span class="dot dot-lg bg-success mr-2"></span>
