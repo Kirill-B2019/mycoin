@@ -32,8 +32,9 @@ class AdmCurrencyController extends Controller
 		Currency::create([
 			'name'=>$Request->get('name'),
 			'code'=>getNormalSlug($Request->get('code')),
-			'symbol '=>$Request->get('symbol') ?? 0,
+			'symbol'=>$Request->get('symbol') ?? 0,
 			'type'=>$Request->get('type') ?? 1,
+			'status'=>$Request->get('status') ?? 1,
 	
 		]);
 		return Redirect::route("adp.currencies")->with('status', 'Новая валюта: '.$Request->get('name').' СОЗДАНА!');

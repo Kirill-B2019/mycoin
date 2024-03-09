@@ -14,7 +14,101 @@
                             <div class="card shadow">
                                 <div class="card-body">
                                     <!-- table -->
+                                    <button class="btn btn-primary float-right ml-3" type="button"
+                                            data-toggle="modal" data-target="#AddNewCat">Новая +
+                                    </button>
+                                    <div class="modal fade" id="AddNewCat" tabindex="-1" role="dialog"
+                                         aria-labelledby="EditModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <form method="POST" action="{{ route('adp.new-currencies')}}">
+                                                    @csrf
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="EditModalLabel">Новая
+                                                            </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body small">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="form-group">
+                                                                    Название:<span style="color: #fb5e1c">*</span>&nbsp;<input
+                                                                            id="name" type="text"
+                                                                            class="form-control @error('name') is-invalid @enderror"
+                                                                            name="name" required>
+                                                                    @error('name')
+                                                                    <span class="invalid-feedback" role="alert">
+                                                                                <strong>{{ $message }}</strong>
+                                                                            </span>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="form-group">
+                                                                    Код:<span style="color: #fb5e1c">*</span>&nbsp;<input
+                                                                            id="code" type="text"
+                                                                            class="form-control @error('code') is-invalid @enderror"
+                                                                            name="code" required>
+                                                                    @error('slug')
+                                                                    <span class="invalid-feedback" role="alert">
+                                                                                <strong>{{ $message }}</strong>
+                                                                            </span>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <p class="mb-2"><strong>Тип:</strong></p>
+
+                                                                <div class="form-group">
+
+                                                                        <div class="custom-control custom-radio">
+                                                                            <input type="radio" id="customRadio1" name="type" class="custom-control-input" value="1" checked>
+                                                                            <label class="custom-control-label" for="customRadio1">Крипто</label>
+                                                                        </div>
+                                                                        <div class="custom-control custom-radio">
+                                                                            <input type="radio" id="customRadio2" name="type" class="custom-control-input" value="2">
+                                                                            <label class="custom-control-label" for="customRadio2">Фиат</label>
+                                                                        </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col">
+                                                                <p class="mb-2"><strong>Статус:</strong></p>
+
+                                                                <div class="form-group">
+
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input type="radio" id="customRadio1" name="status" class="custom-control-input" value="1" checked>
+                                                                        <label class="custom-control-label" for="customRadio1">Активна</label>
+                                                                    </div>
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input type="radio" id="customRadio2" name="status" class="custom-control-input" value="0">
+                                                                        <label class="custom-control-label" for="customRadio2">Не активна</label>
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">Закрыть
+                                                        </button>
+                                                        <button class="btn btn-primary" type="submit">Добавить
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <table class="table datatables smaller" id="dataTable-1">
                                         <thead>
                                         <tr>

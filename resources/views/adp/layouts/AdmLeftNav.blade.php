@@ -55,6 +55,12 @@
                         </a>
                     </li>
                 </ul>
+                <ul class="collapse list-unstyled pl-4 w-100" id="BLOCKCHAIN">
+                    <li class="nav-item">
+                        <a class="nav-link pl-3" href="{{route('adp.currencies')}}"><span class="ml-1 item-text">Валюты</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
 
         </ul>
