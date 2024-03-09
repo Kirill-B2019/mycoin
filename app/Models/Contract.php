@@ -42,5 +42,9 @@ use SoftDeletes;
          return $this->belongsToMany(Project::class);
      }
 
+	 public function contractCurrency(): \Illuminate\Database\Eloquent\Relations\HasOne
+	 {
+		return $this->hasOne(Currency::class);
+	 }
      //TODO Currency
 }
