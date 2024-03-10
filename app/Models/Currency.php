@@ -12,5 +12,12 @@ class Currency extends Model
     use  SoftDeletes;
     protected $guarded =[];
 
-	
+	public function rates()
+	{
+		return $this->hasMany(CurrencyRate::class,'currency_first') ;
+	}
+	public function last_rate()
+	{
+		return $this->hasOne(CurrencyRate::class, 'currency_first')->latestOfMany();
+	}
 }

@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="row ">
                                     <div class="col text-center text-muted">
-                                        <span class="h5 ath-heading title" id="InAmm">10</span><small class="tc-default"> USDT = <span class="h5 ath-heading title" id="InAmm2">{{round(10/($ethPrice->USD*0.00002),5)}}</span> MCP</small>
+                                        <span class="h5 ath-heading title" id="InAmm">10</span><small class="tc-default"> USDT = <span class="h5 ath-heading title" id="InAmm2">{{round(10/($nowPrice*0.4),5)}}</span> MCP</small>
 
                                     </div>
                                 </div>
@@ -169,7 +169,7 @@
 
 ================================================== -->
 <script>
-var price = <?php echo round($ethPrice->USD*0.00002,5);?>;
+var price = <?php echo round($nowPrice*0.4,5);?>;
 
     $(".denomination").click(function () {
         $(".denomination").removeClass("selected").prop("checked", false);
