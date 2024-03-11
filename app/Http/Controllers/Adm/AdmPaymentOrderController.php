@@ -11,7 +11,8 @@ use App\Models\PaymentOrder;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Mail;
+use Illuminate\Support\Facades\Mail;
+
 
 class AdmPaymentOrderController extends AdminController
 {
@@ -63,10 +64,9 @@ class AdmPaymentOrderController extends AdminController
             $defaultRole = Role::where('start_role',1)->first();
             $user->assignRoles($defaultRole->slug);
 
-            /*    Mail::send('emails.welcome', compact('data'), function ($message) use ($user) {
-                    $message->to($user->email, $user->name)->subject('Добро пожаловать на проектную площадку MyCOIN in');
+               Mail::send('emails.welcome', function ($message) use ($user) {
+                    $message->to($user->email, $user->name)->subject('Ваш платеж принят в обработку');
                 });
-            */
             return $user;
         }
         else{
