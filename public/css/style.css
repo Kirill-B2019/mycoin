@@ -590,7 +590,7 @@ a:focus {
 
 .theme-btn-s2 {
   background-color: transparent;
-  line-height: auto;
+  line-height: normal;
   font-size: 16px;
   font-weight: bold;
   color: #fff;
@@ -633,25 +633,25 @@ a:focus {
 }
 
 .form ::-webkit-input-placeholder {
-  font-style: 12px;
+
   font-style: normal;
   color: #595959;
 }
 
 .form :-moz-placeholder {
-  font-style: 12px;
+
   font-style: normal;
   color: #595959;
 }
 
 .form ::-moz-placeholder {
-  font-style: 12px;
+
   font-style: normal;
   color: #595959;
 }
 
 .form :-ms-input-placeholder {
-  font-style: 12px;
+
   font-style: normal;
   color: #595959;
 }
@@ -1366,25 +1366,25 @@ a:focus {
 }
 
 .sidebar .search-widget form div ::-webkit-input-placeholder {
-  font-style: 12px;
+
   font-style: normal;
   color: #fb5e1c;
 }
 
 .sidebar .search-widget form div :-moz-placeholder {
-  font-style: 12px;
+
   font-style: normal;
   color: #fb5e1c;
 }
 
 .sidebar .search-widget form div ::-moz-placeholder {
-  font-style: 12px;
+
   font-style: normal;
   color: #fb5e1c;
 }
 
 .sidebar .search-widget form div :-ms-input-placeholder {
-  font-style: 12px;
+
   font-style: normal;
   color: #fb5e1c;
 }
@@ -1418,7 +1418,7 @@ a:focus {
 .sidebar .search-widget form div .btn:focus {
   outline: none;
   border: 0;
-  box-shadow: 0;
+  box-shadow: none;
 }
 
 .share {
