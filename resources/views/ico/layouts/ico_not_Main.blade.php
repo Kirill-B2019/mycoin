@@ -2,6 +2,15 @@
 <html lang="ru" class="js">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y8RSKMND1G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-Y8RSKMND1G');
+    </script>
     <meta charset="utf-8">
     <meta name="author" content="KB">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
