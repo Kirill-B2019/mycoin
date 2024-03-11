@@ -6,6 +6,8 @@ namespace App\Http\Controllers\Adm;
 use App\Http\Controllers\AdminController;
 use App\Models\BlockChain\Block;
 use App\Models\BlockChain\Chain;
+use App\Models\OrderStatus;
+use App\Models\PaymentOrder;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -17,30 +19,29 @@ class AdmPaymentOrderController extends AdminController
     {
 
         $user_name = '';
-
+        $user_id = '';
         if($Request->get('email'))
         {
             $user =  $this->findeOfCreateOnMail($Request->get('email'));
             $user_name = $user->name;
+            $user_id = $user->id;
         }
 
-        if($Request->get('ammount'));
+        if($Request->get('amount'));
         {
             $myBlockchain = new Chain();
             $res = $myBlockchain->addBlock(new Block( [
 
-                'amount' => $Request->get('ammount'),
-                "mcp_amount" => $Request->get('mcp_amount'),
+                'amount' => $Request->get('mcp_amount'),
+                'system_message'=>'ICO Payment',
+                'decimal_places'=>6,
 
             ]));
 
 
         }
 
-        if($Request->get('sender_adress'));
-        {
-
-        }
+        $this->addPayment($user_id,5,$res['index'], $Request->get('amount'));
 
         $email = $Request->get('email');
         $amount= $Request->get('amount');
@@ -71,5 +72,18 @@ class AdmPaymentOrderController extends AdminController
         else{
             return $user;
         }
+    }
+
+    public function addPayment($user_id,$currency_id,$trnx,$amount)
+    {
+        $orderStatus = OrderStatus::query()->where('slug','New')->first();
+
+        return $res = PaymentOrder::query()->create([
+            'user_id'=>$user_id,
+            'currency_id'=>$currency_id,
+            'amount'=>$amount,
+            'trnx' => $trnx,
+            'order_status_id'=>$orderStatus->id,
+        ]);
     }
 }
