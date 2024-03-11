@@ -13,15 +13,15 @@ use Mail;
 
 class AdmPaymentOrderController extends AdminController
 {
-    public function reception(Request $Request)
+    public function reception(Request $Request): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
 
-
-
+        $user_name = '';
 
         if($Request->get('email'))
         {
-          $user =  $this->findeOfCreateOnMail($Request->get('email'));
+            $user =  $this->findeOfCreateOnMail($Request->get('email'));
+            $user_name = $user->name;
         }
 
         if($Request->get('ammount'));
@@ -29,17 +29,23 @@ class AdmPaymentOrderController extends AdminController
             $myBlockchain = new Chain();
             $res = $myBlockchain->addBlock(new Block( [
 
-                'amount' => 5555,
+                'amount' => $Request->get('ammount'),
                 "mcp_amount" => $Request->get('mcp_amount'),
+
             ]));
 
-            dd($res);
+
         }
 
         if($Request->get('sender_adress'));
         {
 
         }
+
+        $email = $Request->get('email');
+        $amount= $Request->get('amount');
+        $mcp_amount = $Request->get('mcp_amount');
+        return view('ico.payment',compact(['amount','mcp_amount','email', 'user_name']));
 
     }
 

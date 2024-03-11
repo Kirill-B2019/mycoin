@@ -1527,7 +1527,7 @@
                 <div class="row gutter-vr-10px">
                     <div class="col-lg-6 order-lg-last text-lg-end">
                         <ul class="footer-nav">
-                            <li><a href="#">Privacy Policy</a></li>
+
 
                         </ul>
                     </div>

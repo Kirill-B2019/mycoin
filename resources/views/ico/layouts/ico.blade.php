@@ -37,10 +37,10 @@
                 <div class="ath-body bg-theme tc-light">
                     <h5 class="ath-heading title">Участие<br/> в PRE-ICO</h5>
 
-                        <form action="{{route('send_pay')}}" method="POST">
-                            <input type="hidden" id="hid_adm" name="mcp_amount" value="10">
-                            @csrf
-                            <div class="row">
+                    <form action="{{route('send_pay')}}" method="POST">
+                        <input type="hidden" id="hid_adm" name="mcp_amount" value="10">
+                        @csrf
+                        <div class="row">
                             <div class="col-xxl-7 col-sm-6 col-md-7 col-lg-7 col-xl-7">
 
                                 <div class="row">
@@ -116,16 +116,16 @@
                                     </div>
                                 </div>
                             </div>
-                            </div>
-                            <div class="row ">
-                        <div class="col text-center text-muted">
-                            <button type="submit" class="btn btn-primary btn-block btn-md">Перейти к оплате</button>
-                            <p><small>СЕТЬ ERC-20</small></p>
-
                         </div>
-                    </div>
+                        <div class="row ">
+                            <div class="col text-center text-muted">
+                                <button type="submit" class="btn btn-primary btn-block btn-md">Перейти к оплате</button>
+                                <p><small>СЕТЬ ERC-20</small></p>
+
+                            </div>
+                        </div>
                     </form>
-                 </div>
+                </div>
             </div>
         </div>
     </div>
@@ -169,7 +169,7 @@
 
 ================================================== -->
 <script>
-var price = <?php echo round($nowPrice*0.4,5);?>;
+    var price = <?php echo round($nowPrice*0.4,5);?>;
 
     $(".denomination").click(function () {
         $(".denomination").removeClass("selected").prop("checked", false);
@@ -199,15 +199,15 @@ var price = <?php echo round($nowPrice*0.4,5);?>;
         else{
             let key = parseInt(event.key)
             if (isNaN(key)){
-                    event.preventDefault();
-                    return false;
-                }
-                else {
-                    var res2 = String(parseFloat(($i + key) / price).toFixed(6));
-                    $("#InAmm").text($i + key);
-                    $("#InAmm2").text(res2);
-                    $("#hid_adm").val(res2);
-                }
+                event.preventDefault();
+                return false;
+            }
+            else {
+                var res2 = String(parseFloat(($i + key) / price).toFixed(6));
+                $("#InAmm").text($i + key);
+                $("#InAmm2").text(res2);
+                $("#hid_adm").val(res2);
+            }
         }
         $(".denomination").removeClass("selected").prop("checked", false);
         $(this).addClass("selected");
