@@ -12983,3 +12983,129 @@ padding-top: 10%;
 
     }
 }
+.profile_rigth_side
+{
+    padding: 10px;
+    background: #15181d;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 15px 0 rgba(45, 58, 74, 0.65);
+
+}
+
+.profile_rigth_side h3{
+    color: #828791;
+
+}
+.profile_rigth_side p{
+    color: #828791;
+}
+.profile_rigth_side span {
+    color: #fb5e1c;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.profile_rigth_side h7{
+    color: #ffffff;
+    font-size: large;
+    font-weight: bold;
+}
+
+.profile_rigth_side-btn {
+    font-size: 13px;
+    width: 100%;
+    background-color: #fb5e1c;
+    line-height: 0.66em;
+    color: #fff;
+    padding: 15px;
+    border: 0;
+    text-transform: uppercase;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+
+}
+.profile_rigth_side .avatar {
+    margin: 10px 0 10px 0;
+    border-radius: 100px; /* Радиус скругления */
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.84), 0 0 13px #333; /* Параметры теней */
+}
+/*******************************************/
+.profile_left_side
+{
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.84);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.profile_rigth_side h3{
+    color: #828791;
+
+}
+.profile_rigth_side p{
+    color: #828791;
+}
+.profile_rigth_side span {
+    color: #fb5e1c;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.profile_rigth_side h7{
+    color: #ffffff;
+    font-size: large;
+    font-weight: bold;
+}
+
+.profile_rigth_side-btn {
+    font-size: 13px;
+    width: 100%;
+    background-color: #fb5e1c;
+    line-height: 0.66em;
+    color: #fff;
+    padding: 15px;
+    border: 0;
+    text-transform: uppercase;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+
+}
