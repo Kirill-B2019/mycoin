@@ -25,10 +25,10 @@ class AdmPaymentOrderController extends AdminController
         {
             $user =  $this->findeOfCreateOnMail($Request->get('email'));
             $user_name = $user->name;
-            $user_id = $user->id;
-        }
+   
+        
 
-        if($Request->get('amount'));
+        if($Request->get('amount'))
         {
             $myBlockchain = new Chain();
             $res = $myBlockchain->addBlock(new Block( [
@@ -38,33 +38,38 @@ class AdmPaymentOrderController extends AdminController
                 'decimal_places'=>6,
 
             ]));
-
-
+	        
+	        $this->addPayment(5,$res['index'], $Request->get('amount'));
         }
-
-        $this->addPayment($user_id,5,$res['index'], $Request->get('amount'));
+    }
+        
 
         $email = $Request->get('email');
         $amount= $Request->get('amount');
         $mcp_amount = $Request->get('mcp_amount');
-        return view('ico.payment',compact(['amount','mcp_amount','email', 'user_name']));
+        return view('ico.payment',compact([
+			'amount',
+	        'mcp_amount',
+	        'email',
+	        'user_name'
+        ]));
 
     }
 
     public function findeOfCreateOnMail($mail)
     {
-        $user = User::where('email',$mail)->first();
+        $user = User::query()->where('email',$mail)->first();
         if (!$user){
-            $user = User::create([
+            $user = User::query()->create([
                 'name' => 'MYCIOIN_User_'.now()->timestamp,
                 'email' => $mail,
                 'password' => '0',
 
             ]);
-            $defaultRole = Role::where('start_role',1)->first();
+            $defaultRole = Role::query()->where('start_role',1)->first();
             $user->assignRoles($defaultRole->slug);
 
-               Mail::send('emails.welcome', function ($message) use ($user) {
+               Mail::send('emails.welcome', (array)Null,function ($message) use ($user) {
                     $message->to($user->email, $user->name)->subject('Ваш платеж принят в обработку');
                 });
             return $user;
@@ -74,16 +79,20 @@ class AdmPaymentOrderController extends AdminController
         }
     }
 
-    public function addPayment($user_id,$currency_id,$trnx,$amount)
+    public function addPayment($currency_id,$trnx,$amount)
     {
         $orderStatus = OrderStatus::query()->where('slug','New')->first();
 
         return $res = PaymentOrder::query()->create([
-            'user_id'=>$user_id,
+            'user_id'=> $this->user()->id,
             'currency_id'=>$currency_id,
             'amount'=>$amount,
             'trnx' => $trnx,
             'order_status_id'=>$orderStatus->id,
         ]);
     }
+	
+	
+	
+	
 }
