@@ -167,7 +167,7 @@
                                     <p class="animated" data-animate="fadeInUp" data-delay="0.4">Наша цель - разработать автономную инвестиционную платформу, гарантирующую исполнение контрактов и обеспечивающую развитие инновационных технологий, продуктов и услуг. </p>
                                     <p class="animated" data-animate="fadeInUp" data-delay="0.5">Исполнение проектов обеспечивают СМАРТ контракты. Все данные о контрактах и любых транзакциях храниться в цепочках БЛОКЧАЙНА платформы. Сохранность средств и целевое использование гарантируется собственными активами платформы – страхование от не достижения проектом поставленных результатов.</p>
                                     <ul class="btn-grp gutter-vr-20px pdt-m">
-                                        <li class="animated" data-animate="fadeInUp" data-delay="0.6"><a href="#docs" class="menu-link btn btn-primary btn-round btn-lg"><span>White Paper платформы</span> <em class="icon ti ti-arrow-down"></em></a></li>
+                                        <li class="animated" data-animate="fadeInUp" data-delay="0.6"><a href="{{asset('storage/WP0224v1.pdf')}}" class="menu-link btn btn-primary btn-round btn-lg"><span>White Paper платформы</span> <em class="icon ti ti-arrow-down"></em></a></li>
                                         <li class="animated" data-animate="fadeInUp" data-delay="0.7"><a href="#ecosystems" class="menu-link btn btn-underline">Наша платформа</a></li>
                                     </ul>
                                 </div>
