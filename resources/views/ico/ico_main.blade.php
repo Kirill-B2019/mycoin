@@ -9,8 +9,8 @@
                         <!-- Logo @s -->
                         <div class="header-logo logo animated" data-animate="fadeInDown" data-delay=".6">
                             <a href="./" class="logo-link">
-                                <img class="logo-dark" src="{{asset('ico/images/logo-s2-white.png')}}" srcset="{{asset('ico/images/logo-s2-white2x.png')}} 2x" alt="logo">
-                                <img class="logo-light" src="{{asset('ico/images/logo-s2-white.png')}}" srcset="{{asset('ico/images/logo-s2-white2x.png')}} 2x" alt="logo">
+                                <img class="logo-dark" src="{{asset('ico/images/logo-s2-white.png')}}" srcset="{{asset('ico/images/logo-s2-white.png')}}"  alt="logo">
+                                <img class="logo-light" src="{{asset('ico/images/logo-s2-white.png')}}" srcset="{{asset('ico/images/logo-s2-white.png')}}" alt="logo">
                             </a>
                         </div>
                         <!-- Menu Toogle @s -->
