@@ -51,7 +51,7 @@
 QrCode::size(300)
    ->color(255,245,248)
    ->backgroundColor(255,90,0, 0.8)
-   ->USDT('0x589Cf8dc7f33Ab1856cc0b89a9cB2ac3642e5e7E',$amount);
+   ->BTC('0x589Cf8dc7f33Ab1856cc0b89a9cB2ac3642e5e7E',$amount);
                    !!}
 
                                             </p>
