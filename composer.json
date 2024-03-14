@@ -7,7 +7,7 @@
     "require": {
         "php": "^8.2",
         "barryvdh/laravel-dompdf": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
+        "guzzlehttp/guzzle": "^7.8.1",
         "intervention/image": "^3.4.0",
         "laravel/framework": "^v9.52.16",
         "laravel/sanctum": "^v2.15.1",
@@ -21,15 +21,15 @@
         "barryvdh/laravel-debugbar": "^v3.11.0",
         "barryvdh/laravel-ide-helper": "^v2.15.1",
         "beyondcode/tinkerwell": "dev-main",
-        "fakerphp/faker": "^v1.23.1.1",
+        "fakerphp/faker": "^v1.23.1",
         "giggsey/locale": "^2.5",
-        "laravel/sail": "^1.0.1",
+        "laravel/sail": "^1.28.1",
         "mockery/mockery": "^1.6.7",
         "nelexa/zip": "^4.0.2",
         "nunomaduro/collision": "^6.0",
         "pear/crypt_gpg": "^1.6",
-        "phpunit/phpunit": "^9.5.10",
-        "spatie/laravel-ignition": "^1.0"
+        "phpunit/phpunit": "^9.6.17",
+        "spatie/laravel-ignition": "^1.6.4"
     },
     "autoload": {
         "psr-4": {

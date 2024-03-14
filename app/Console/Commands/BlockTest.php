@@ -39,6 +39,7 @@ class BlockTest extends Command
     public function handle()
     {
 	   $q = new CurrencyRate();
+	   dd(new Block());
 	   dd($q->getTodayAuPrice());
         return 0;
     }
