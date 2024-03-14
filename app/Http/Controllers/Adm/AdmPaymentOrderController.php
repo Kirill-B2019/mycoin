@@ -25,8 +25,8 @@ class AdmPaymentOrderController extends AdminController
         {
             $user =  $this->findeOfCreateOnMail($Request->get('email'));
             $user_name = $user->name;
-   
-        
+
+
 
         if($Request->get('amount'))
         {
@@ -38,11 +38,11 @@ class AdmPaymentOrderController extends AdminController
                 'decimal_places'=>6,
 
             ]));
-	        
-	        $this->addPayment(5,$res['index'], $Request->get('amount'));
+
+	        $this->addPayment($user,5,$res['index'], $Request->get('amount'));
         }
     }
-        
+
 
         $email = $Request->get('email');
         $amount= $Request->get('amount');
@@ -69,7 +69,7 @@ class AdmPaymentOrderController extends AdminController
             $defaultRole = Role::query()->where('start_role',1)->first();
             $user->assignRoles($defaultRole->slug);
 
-               Mail::send('emails.welcome', (array)Null,function ($message) use ($user) {
+               Mail::send('root.emails.welcome', (array)Null,function ($message) use ($user) {
                     $message->to($user->email, $user->name)->subject('Ваш платеж принят в обработку');
                 });
             return $user;
@@ -79,20 +79,20 @@ class AdmPaymentOrderController extends AdminController
         }
     }
 
-    public function addPayment($currency_id,$trnx,$amount)
+    public function addPayment($user,$currency_id,$trnx,$amount)
     {
         $orderStatus = OrderStatus::query()->where('slug','New')->first();
 
         return $res = PaymentOrder::query()->create([
-            'user_id'=> $this->user()->id,
+            'user_id'=> $user->id,
             'currency_id'=>$currency_id,
             'amount'=>$amount,
             'trnx' => $trnx,
             'order_status_id'=>$orderStatus->id,
         ]);
     }
-	
-	
-	
-	
+
+
+
+
 }
