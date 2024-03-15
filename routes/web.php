@@ -40,7 +40,7 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Route;
 
-
+Route::get('/pl', function () { return view('main.platform_main'); })->name('main.platform_main');
 
 
 
@@ -208,7 +208,7 @@ Route::group([
 	        Route::post('/nodes/update/{id}', [ChainNodeController::class, 'update'])->name('adp.chain_nodes.update');
 	        Route::post('/nodes/delete/{id}', [ChainNodeController::class, 'delete'])->name('adp.chain_nodes.delete');
 	        Route::post('/new-nodes', [ChainNodeController::class, 'create'])->name('adp.new-chain_nodes');
-	
+
 	// Админ категории
 	Route::get('/currencies', [AdmCurrencyController::class, 'index'])->name('adp.currencies');
 		Route::post('/currencies/update/{id}', [AdmCurrencyController::class, 'update'])->name('adp.currencies.update');

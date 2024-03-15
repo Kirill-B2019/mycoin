@@ -902,7 +902,7 @@ if ($(".urgent-slider").length) {
         = HOME STYLE THREE TOPBAR COUNTDOWN
     -------------------------------------------*/
     if ($("#clock").length) {
-        $('#clock').countdown('2024/03/01', function(event) {
+        $('#clock').countdown('2024/04/14', function(event) {
             var $this = $(this).html(event.strftime(''
             + '<div class="box"><div>%D</div> <span>Дней</span> </div>'
             + '<div class="box"><div>%H</div> <span>Часов</span> </div>'
@@ -1001,7 +1001,7 @@ if ($(".urgent-slider").length) {
         = HOME STYLE FOUR EVENT COLCK
     -------------------------------------------*/
     if ($("#event-clock").length) {
-        $('#event-clock').countdown('2023/09/31', function(event) {
+        $('#event-clock').countdown('2024/04/14', function(event) {
             var $this = $(this).html(event.strftime(''
             + '<div class="box"><div>%D</div> <span>Дней</span> </div>'
             + '<div class="box"><div>%H</div> <span>Часов</span> </div>'
@@ -1192,7 +1192,7 @@ if ($(".urgent-slider").length) {
         = HOME STYLE FIVE URGENT CAUSES CLOCK, PROGRESS ETC
     -------------------------------------------------------*/
     if ($("#causes-end-time").length) {
-        $('#causes-end-time').countdown('2024/09/01', function(event) {
+        $('#causes-end-time').countdown('2024/04/14', function(event) {
             var $this = $(this).html(event.strftime(''
             + '<div class="box"><div>%D</div> <span>Days</span> </div>'
             + '<div class="box"><div>%H</div> <span>Hours</span> </div>'

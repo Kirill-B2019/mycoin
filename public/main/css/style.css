@@ -1,0 +1,167 @@
+/*
+  Theme Name: Reveal
+  Theme URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
+  Author: BootstrapMade.com
+  License: https://bootstrapmade.com/license/
+*/
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  background: #fff;
+  color: #444;
+  font-family: gitbook-code-font, Menlo, monospace;
+    font-size: 1em;
+}
+
+a {
+  color: #f8520c;
+  transition: 0.5s;
+}
+
+a:hover, a:active, a:focus {
+  color: #f8520c;
+  outline: none;
+  text-decoration: none;
+}
+
+p {
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+h1{
+    font-family: "Montserrat", sans-serif;
+    font-size: 3em;
+    color: #f8520c;
+    font-weight: 600;
+    font-transform: uppercase ;
+}
+h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+
+
+
+/* Services Section
+--------------------------------*/
+
+#services {
+  padding: 30px 0 0 0;
+}
+
+#services .box {
+  padding: 40px;
+    height: 230px;
+  margin-bottom: 40px;
+  box-shadow: 10px 10px 15px rgba(73, 78, 92, 0.1);
+  background: #fff;
+  transition: 0.4s;
+}
+
+#services  .box:hover {
+    background: rgba(248, 82, 12, 0.2);
+    color: #f8520c;
+  box-shadow: 0px 0px 30px rgba(73, 78, 92, 0.15);
+  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+    cursor: pointer;
+}
+
+#services .box .icon {
+  float: left;
+}
+
+#services .box .icon i {
+  color: #444;
+  font-size: 64px;
+  transition: 0.5s;
+  line-height: 0;
+  margin-top: 34px;
+}
+
+#services .box .icon i:before {
+  background: #f8520c;
+
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+#services .box h4 {
+  margin-left: 100px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+#services .box h4 a {
+  color: #444;
+}
+
+#services .box p {
+  font-size: 14px;
+  margin-left: 100px;
+  margin-bottom: 0;
+  line-height: 24px;
+}
+
+@media (max-width: 767px) {
+  #services .box .box {
+    margin-bottom: 20px;
+  }
+  #services .box .icon {
+    float: none;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  #services .box h4, #services .box p {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+
+  padding: 0 0 30px 0;
+  font-size: 14px;
+}
+
+.bg-orange-30:before {
+    content: "";
+    position: absolute;
+    background: rgb(248, 82, 12);
+    color: #ffffff;
+    top: 0;
+    right: 50%;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
+}
+
+#services .badge_active {
+    background-color: #f8520c;
+    width: min-content;
+    color: white;
+    padding: 2px 4px;
+    text-align: center;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+#services .badge_test {
+    background-color: rgba(248, 82, 12, 0.44);
+    width: min-content;
+    color: white;
+    padding: 2px 4px;
+    text-align: center;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
