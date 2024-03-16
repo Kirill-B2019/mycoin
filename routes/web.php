@@ -40,18 +40,19 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/pl', function () { return view('main.platform_main'); })->name('main.platform_main');
-
+Route::group(['domain'=>getenv('APP_DOMAIN')],function (){
+	Route::get('/', function () { return view('main.platform_main'); })->name('main.platform_main');
+	});
 
 
 Route::group(['domain'=>getenv('APP_DOMAIN_ICO')],function (){
     Route::get('/',  [MCPTokenController::class, 'index'])->name('ico.main');
         Route::post('/send_pay',  [AdmPaymentOrderController::class, 'reception'])->name('send_pay');
+
 });
 
 
-
-
+Route::group(['domain'=>getenv('APP_DOMAIN_PR')],function (){
     Route::get('/', [MainPageController::class, 'index'])->name('project.main');
     Route::get('/about', function () { return view('project.about'); })->name('project.about');
     Route::get('/contact', function () { return view('project.contact'); })->name('project.contact');
@@ -76,7 +77,7 @@ Route::group(['domain'=>getenv('APP_DOMAIN_ICO')],function (){
     Route::get('/add_project_rule', function () { return view('project.add_project_rule'); })->name('project.add_project_rule');
     Route::get('/add_project_pricing', function () { return view('project.add_project_pricing'); })->name('project.add_project_pricing');
 
-
+});
 
 Auth::routes();
 // Админка
