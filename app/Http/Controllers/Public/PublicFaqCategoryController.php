@@ -13,7 +13,7 @@ class PublicFaqCategoryController extends Controller
     public function index(){
 
         $FAQCategories = FaqCategory::with('publicGetArticles')->get();
-        return view('root.faq')->with(compact('FAQCategories'));
+        return view('project.faq')->with(compact('FAQCategories'));
     }
 
 

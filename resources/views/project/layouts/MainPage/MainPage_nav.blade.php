@@ -13,14 +13,14 @@
         <div id="navbar" class="navbar-collapse collapse">
             <button class="close-navbar"><i class="fa fa-close"></i></button>
             <ul class="nav navbar-nav">
-                <li><a href="{{ route('root.main') }}" style="color: {{ request()->is('/') ? '#fb5e1c' : '' }}"><b>Главная</b></a></li>
-                <li><a href="{{ route('root.development') }}"><b>Проекты</b></a></li>
-                <li><a href="{{ route('root.development') }}">Недвижимость</a></li>
+                <li><a href="{{ route('project.main') }}" style="color: {{ request()->is('/') ? '#fb5e1c' : '' }}"><b>Главная</b></a></li>
+                <li><a href="{{ route('project.development') }}"><b>Проекты</b></a></li>
+                <li><a href="{{ route('project.development') }}">Недвижимость</a></li>
                 <li class="sub-menu">
-                    <a href="{{ route('root.contact') }}">Контакты</a>
+                    <a href="{{ route('project.contact') }}">Контакты</a>
                     <ul>
-                        <li><a href="{{ route('root.about') }}"><b>О MyCOIN</b></a></li>
-                        <li><a href="{{ route('root.faq') }}">F.A.Q.</a></li>
+                        <li><a href="{{ route('project.about') }}"><b>О MyCOIN</b></a></li>
+                        <li><a href="{{ route('project.faq') }}">F.A.Q.</a></li>
                     </ul>
                 </li>
 

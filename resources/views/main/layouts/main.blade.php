@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CC211MDY0E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-CC211MDY0E');
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,7 +67,7 @@
 <footer id="footer">
     <div class="container">
         <div>
-            <a href="{{ route('root.main') }}"><img src="{{asset('images/logo-2.png')}}" alt=""></a>
+            <a href="{{ route('project.main') }}"><img src="{{asset('images/logo-2.png')}}" alt=""></a>
 
         </div>
         <div>&copy; Copyright <strong>KB</strong>. All Rights Reserved</div>

@@ -63,8 +63,8 @@
     </div>
     <!-- end preloader -->
 
-@include('root.layouts.SinglePage.SinglePage_header')
+@include('project.layouts.SinglePage.SinglePage_header')
 
 @yield('content')
 
-@include('root.layouts.SinglePage.SinglePage_footer')
+@include('project.layouts.SinglePage.SinglePage_footer')

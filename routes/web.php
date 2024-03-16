@@ -51,31 +51,30 @@ Route::group(['domain'=>getenv('APP_DOMAIN_ICO')],function (){
 
 
 
-// Основной домен (root)
 
-    Route::get('/', [MainPageController::class, 'index'])->name('root.main');
-    Route::get('/about', function () { return view('root.about'); })->name('root.about');
-    Route::get('/contact', function () { return view('root.contact'); })->name('root.contact');
+    Route::get('/', [MainPageController::class, 'index'])->name('project.main');
+    Route::get('/about', function () { return view('project.about'); })->name('project.about');
+    Route::get('/contact', function () { return view('project.contact'); })->name('project.contact');
     // FAQ
-    Route::get('/faq', [PublicFaqCategoryController::class,'index'])->name('root.faq');
+    Route::get('/faq', [PublicFaqCategoryController::class,'index'])->name('project.faq');
     //Взнос без регистрации
-    Route::get('/donate/{id}', [PublicDonatController::class,'index'])->name('root.donate');
+    Route::get('/donate/{id}', [PublicDonatController::class,'index'])->name('project.donate');
     //Недвижимость
-    Route::get('/development', function () { return view('root.development'); })->name('root.development');
+    Route::get('/development', function () { return view('project.development'); })->name('project.development');
     //подписка
     Route::post('/subscribe-project', [PublicSubscribeController::class, 'createSubscribeProject'])->name('subscribe-project');
     //Инвесторы
-    Route::get('/sponsors', function () { return view('root.sponsors'); })->name('root.sponsors');
-    Route::get('/top_sponsors', function () { return view('root.top_sponsors'); })->name('root.top_sponsors');
-    Route::get('/be_sponsor', function () { return view('root.be_sponsor'); })->name('root.be_sponsor');
+    Route::get('/sponsors', function () { return view('project.sponsors'); })->name('project.sponsors');
+    Route::get('/top_sponsors', function () { return view('project.top_sponsors'); })->name('project.top_sponsors');
+    Route::get('/be_sponsor', function () { return view('project.be_sponsor'); })->name('project.be_sponsor');
     //Проекты публичные
 
-    Route::get('/all_projects', function () { return view('root.all_projects'); })->name('root.all_projects');
-    Route::get('/project/{id}', [PublicProjectController::class,'viewSingleProject'])->name('root.single_project');
-    Route::get('/top_projects', function () { return view('root.top_projects'); })->name('root.top_projects');
-    Route::get('/add_project', function () { return view('root.add_project'); })->name('root.add_project');
-    Route::get('/add_project_rule', function () { return view('root.add_project_rule'); })->name('root.add_project_rule');
-    Route::get('/add_project_pricing', function () { return view('root.add_project_pricing'); })->name('root.add_project_pricing');
+    Route::get('/all_projects', function () { return view('project.all_projects'); })->name('project.all_projects');
+    Route::get('/project/{id}', [PublicProjectController::class,'viewSingleProject'])->name('project.single_project');
+    Route::get('/top_projects', function () { return view('project.top_projects'); })->name('project.top_projects');
+    Route::get('/add_project', function () { return view('project.add_project'); })->name('project.add_project');
+    Route::get('/add_project_rule', function () { return view('project.add_project_rule'); })->name('project.add_project_rule');
+    Route::get('/add_project_pricing', function () { return view('project.add_project_pricing'); })->name('project.add_project_pricing');
 
 
 

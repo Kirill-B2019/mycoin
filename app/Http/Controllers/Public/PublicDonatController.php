@@ -11,6 +11,6 @@ class PublicDonatController extends Controller
     public function index($id)
     {
         $project = Project::findOrFail($id) or App::abort(404);
-        return view('root.donate',compact('project'));
+        return view('project.donate',compact('project'));
     }
 }

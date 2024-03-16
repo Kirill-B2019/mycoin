@@ -1,4 +1,4 @@
-@extends('root.layouts.SinglePage.SinglePage')
+@extends('project.layouts.SinglePage.SinglePage')
 @section('title')
     Взнос - MyCOINin CRYPTO FOUND Plarform
 @endsection

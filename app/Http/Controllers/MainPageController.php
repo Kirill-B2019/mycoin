@@ -26,7 +26,7 @@ class MainPageController extends Controller
 
         $actual_causes = Project::where('main_page',NULL)->get() or App::abort(404);
 
-        return view('root.main',compact('ProjectCat' ,'mainPage','Incomes','Team','allIncomes','actual_causes'));
+        return view('project.main',compact('ProjectCat' ,'mainPage','Incomes','Team','allIncomes','actual_causes'));
 
     }
 

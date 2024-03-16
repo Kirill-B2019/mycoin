@@ -1,4 +1,4 @@
-@extends('root.layouts.SinglePage.SinglePage')
+@extends('project.layouts.SinglePage.SinglePage')
 @section('title')
     {{$viewProject->name}} - MyCOINin CRYPTO FOUND Plarform
 @endsection
@@ -210,7 +210,7 @@
                                     <span style="width: {{($viewProject->collected/$viewProject->target)*100}}%"></span>
                                 </div>
                             @endif
-                            <a href="{{ route('root.donate',$viewProject->id) }}" class="btn theme-btn"
+                            <a href="{{ route('project.donate',$viewProject->id) }}" class="btn theme-btn"
                                style="width: 100%; padding: 20px;">Инвестировать</a>
                             <p class="small text-muted">Минимальный взнос:
                                 <text
@@ -313,7 +313,7 @@
                                         <p>Если вы инвестируете, то ставите на то, что в будущем {{$viewProject->name}}
                                             будут стоить
                                             более {{number_format($viewProject->priced_around, 0, '', ' ')}} USDT</p>
-                                        <p>Подробнее <a href="{{ route('root.faq') }}" class="link-primary">F.A.Q.</a></p>
+                                        <p>Подробнее <a href="{{ route('project.faq') }}" class="link-primary">F.A.Q.</a></p>
 
                                     </div>
                                 </div>

@@ -1,4 +1,4 @@
-@extends('root.layouts.MainPage.MainPage')
+@extends('project.layouts.MainPage.MainPage')
 @section('title') MyCOINin CRYPTO FOUND Plarform @endsection
 @section('content')
 
@@ -27,7 +27,7 @@
                     <div class="col col-sm-8 slider-title">
                         <h1>Создавайте <span>технологии</span> и <span>продукты</span>, о которых <span>будут</span> говорить</h1>
                         <p>Нет лучшего места, чтобы начать охоту за крутыми и умными инновациями, которые удивляют и восхищают. MyCOIN — это место, где запускаются новые продукты, воплащаются идеи, реализуются мечты.</p>
-                        <a href="{{ route('root.all_projects') }}" class="btn theme-btn">Проекты MyCOIN</a>
+                        <a href="{{ route('project.all_projects') }}" class="btn theme-btn">Проекты MyCOIN</a>
                     </div>
                 </div>
             </div>
@@ -97,7 +97,7 @@
                                     </div>
 
                                     <div>
-                                        <a href="{{route('root.single_project',$mainPage->id)}}" class="btn theme-btn">О проекте</a>
+                                        <a href="{{route('project.single_project',$mainPage->id)}}" class="btn theme-btn">О проекте</a>
 
                                     </div>
                                 </form>
@@ -157,7 +157,7 @@
                         </div>
                         <div class="text">
                             <p>{{$causes->announce}}</p>
-                            <a href="{{route('root.single_project',$causes->id)}}" class="btn theme-btn">К проекту</a>
+                            <a href="{{route('project.single_project',$causes->id)}}" class="btn theme-btn">К проекту</a>
                         </div>
                     </div>
                 @endforeach

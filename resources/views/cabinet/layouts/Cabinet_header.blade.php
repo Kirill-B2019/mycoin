@@ -9,16 +9,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ route('root.main') }}"><img src="{{asset('images/logo.png')}}" alt
+                <a class="navbar-brand" href="{{ route('project.main') }}"><img src="{{asset('images/logo.png')}}" alt
                                                                            class="img img-responsive"></a>
             </div>
             <div id="navbar" class="navbar-right navbar-collapse collapse">
                 <button class="close-navbar"><i class="fa fa-close"></i></button>
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ route('root.main') }}" style="color: {{ request()->is('/') ? '#fb5e1c' : '' }}">На площадку</a>
+                    <li><a href="{{ route('project.main') }}" style="color: {{ request()->is('/') ? '#fb5e1c' : '' }}">На площадку</a>
                     </li>
                     <li><a href="{{ route('ico.main') }}">К Pre-ICO</a></li>
-                    <li><a href="{{ route('root.faq') }}">FAQ</a></li>
+                    <li><a href="{{ route('project.faq') }}">FAQ</a></li>
 
 
                 </ul>

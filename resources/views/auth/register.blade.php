@@ -1,4 +1,4 @@
-@extends('root.layouts.EmptyPage.EmptyPageMain')
+@extends('project.layouts.EmptyPage.EmptyPageMain')
 @section('title')
     Аутентификация РЕГИСТРАЦИЯ
 @endsection

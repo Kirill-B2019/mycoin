@@ -34,6 +34,6 @@ class PublicProjectController extends Controller
 
         }
          //TODO расчитать и заполнить данными
-        return view("root.single_project", compact('viewProject','projectCat','projectIncomes','projectInitiator','projectDetailImages','projectCreator','data_cart','projectSector'));
+        return view("project.single_project", compact('viewProject','projectCat','projectIncomes','projectInitiator','projectDetailImages','projectCreator','data_cart','projectSector'));
     }
 }

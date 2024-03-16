@@ -61,8 +61,8 @@
     </div>
     <!-- end preloader -->
 
-@include('root.layouts.MainPage.MainPage_header')
+@include('project.layouts.MainPage.MainPage_header')
 
 @yield('content')
 
-@include('root.layouts.MainPage.MainPage_footer')
+@include('project.layouts.MainPage.MainPage_footer')

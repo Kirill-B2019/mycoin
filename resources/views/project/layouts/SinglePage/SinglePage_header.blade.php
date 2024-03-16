@@ -9,21 +9,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ route('root.main') }}"><img src="{{asset('images/logo.png')}}" alt
+                <a class="navbar-brand" href="{{ route('project.main') }}"><img src="{{asset('images/logo.png')}}" alt
                                                                            class="img img-responsive"></a>
             </div>
             <div id="navbar" class="navbar-right navbar-collapse collapse">
                 <button class="close-navbar"><i class="fa fa-close"></i></button>
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ route('root.main') }}" style="color: {{ request()->is('/') ? '#fb5e1c' : '' }}">Главная</a>
+                    <li><a href="{{ route('project.main') }}" style="color: {{ request()->is('/') ? '#fb5e1c' : '' }}">Главная</a>
                     </li>
-                    <li><a href="{{ route('root.development') }}">Проекты</a></li>
-                    <li><a href="{{ route('root.development') }}">Недвижимость</a></li>
+                    <li><a href="{{ route('project.development') }}">Проекты</a></li>
+                    <li><a href="{{ route('project.development') }}">Недвижимость</a></li>
                     <li class="sub-menu">
-                        <a href="{{ route('root.contact') }}">Контакты</a>
+                        <a href="{{ route('project.contact') }}">Контакты</a>
                         <ul>
-                            <li><a href="{{ route('root.about') }}"><b>О MyCOIN</b></a></li>
-                            <li><a href="{{ route('root.faq') }}">F.A.Q.</a></li>
+                            <li><a href="{{ route('project.about') }}"><b>О MyCOIN</b></a></li>
+                            <li><a href="{{ route('project.faq') }}">F.A.Q.</a></li>
                         </ul>
                     </li>
 

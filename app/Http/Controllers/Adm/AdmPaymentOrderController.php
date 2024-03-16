@@ -69,7 +69,7 @@ class AdmPaymentOrderController extends AdminController
             $defaultRole = Role::query()->where('start_role',1)->first();
             $user->assignRoles($defaultRole->slug);
 /*
-               Mail::send('root.emails.welcome', (array)Null,function ($message) use ($user) {
+               Mail::send('project.emails.welcome', (array)Null,function ($message) use ($user) {
                     $message->to($user->email, $user->name)->subject('Ваш платеж принят в обработку');
                 });*/
             return $user;

@@ -16,7 +16,7 @@
 
                     <div class="social align-items-end">
                         <ul>
-                            <li><a href="{{ route('root.add_project') }}"><span
+                            <li><a href="{{ route('project.add_project') }}"><span
                                         style="font-size: small; font-weight: bolder"> РАЗМЕСТИТЬ ПРОЕКТ</span></a></li>
                         </ul>
                     </div>
@@ -30,7 +30,7 @@
                 <div class="row">
                     <div class="col col-md-4">
                         <div class="logo">
-                            <a href="{{ route('root.main') }}"><img src="{{asset('images/logo-2.png')}}" alt
+                            <a href="{{ route('project.main') }}"><img src="{{asset('images/logo-2.png')}}" alt
                                                           class="img img-responsive"></a>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
 
     </div> <!-- end top-bar -->
 
-    @include('root.layouts.MainPage.MainPage_nav')
+    @include('project.layouts.MainPage.MainPage_nav')
 </header>
 <!-- end of header -->
 
