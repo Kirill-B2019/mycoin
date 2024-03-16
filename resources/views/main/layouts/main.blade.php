@@ -78,21 +78,21 @@
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
 <!-- JavaScript Libraries -->
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/superfish/hoverIntent.js"></script>
-<script src="lib/superfish/superfish.min.js"></script>
+<script src="{{asset('main/lib/jquery/jquery.min.js') }}"></script>
+<script src="{{asset('main/lib/jquery/jquery-migrate.min.js') }}"></script>
+<script src="{{asset('main/lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{asset('main/lib/easing/easing.min.js') }}"></script>
+<script src="{{asset('main/lib/superfish/hoverIntent.js') }}"></script>
+<script src="{{asset('main/lib/superfish/superfish.min.js') }}"></script>
 
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/magnific-popup/magnific-popup.min.js"></script>
-<script src="lib/sticky/sticky.js"></script>
+<script src="{{asset('main/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+<script src="{{asset('main/lib/magnific-popup/magnific-popup.min.js') }}"></script>
+<script src="{{asset('main/lib/sticky/sticky.js') }}"></script>
 
 
 
 <!-- Template Main Javascript File -->
-<script src="js/main.js"></script>
+<script src="{{asset('main/js/main.js') }}"></script>
 
 </body>
 </html>
