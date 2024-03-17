@@ -61,7 +61,7 @@
                             <img src="{{asset('main/img/45-45gold.png')}}" alt="">
                         </div>
                         <h4 class="fw-semibold mb-0 text-body-emphasis">MDA.MY-COIN</h4><span class="badge text-bg-secondary">ДОРАБОТКА</span>
-                        <p class="text-body-secondary">Площадка коллективного коллективного владения цифровыми ценностями (MyDiginalActive)</p>
+                        <p class="text-body-secondary">Площадка коллективного владения цифровыми ценностями (MyDiginalActive)</p>
                     </div>
 
                     <div class="col d-flex flex-column gap-2 not-active">
