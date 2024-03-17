@@ -35,13 +35,14 @@ use App\Http\Controllers\Public\PublicDonatController;
 use App\Http\Controllers\Public\PublicFaqCategoryController;
 use App\Http\Controllers\Public\PublicProjectController;
 use App\Http\Controllers\Public\PublicSubscribeController;
+use \App\Http\Controllers\Main\MainController;
 
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Route;
 
 Route::group(['domain'=>getenv('APP_DOMAIN')],function (){
-	Route::get('/', function () { return view('main.platform_main'); })->name('main.platform_main');
+	Route::get('/', [MainController::class, 'index'])->name('main.platform_main');
 	});
 
 

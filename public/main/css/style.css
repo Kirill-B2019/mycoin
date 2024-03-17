@@ -1,167 +1,125 @@
-/*
-  Theme Name: Reveal
-  Theme URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
-  Author: BootstrapMade.com
-  License: https://bootstrapmade.com/license/
-*/
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
-body {
-  background: #fff;
-  color: #444;
-  font-family: gitbook-code-font, Menlo, monospace;
-    font-size: 1em;
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Noto+Sans|Work+Sans");
+* {
+    padding: 0;
+    margin: 0;
 }
-
-a {
-  color: #f8520c;
-  transition: 0.5s;
-}
-
-a:hover, a:active, a:focus {
-  color: #f8520c;
-  outline: none;
-  text-decoration: none;
-}
-
-p {
-  padding: 0;
-  margin: 0 0 30px 0;
-}
-h1{
+body{
+    background-color: #f5f5f5;
     font-family: "Montserrat", sans-serif;
-    font-size: 3em;
+    /*font-family: gitbook-code-font, Menlo, monospace;*/
+    font-weight: 500;
+    font-size: 16px;
+    color: #15181d;
+    line-height: 1.6;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+.navbar-brand {
+    font-size: 2em;
     color: #f8520c;
-    font-weight: 600;
-    font-transform: uppercase ;
+    text-decoration: none;
+    white-space: nowrap;
 }
-h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  margin: 0 0 20px 0;
-  padding: 0;
-}
-
-
-
-
-/* Services Section
---------------------------------*/
-
-#services {
-  padding: 30px 0 0 0;
-}
-
-#services .box {
-  padding: 40px;
-    height: 230px;
-  margin-bottom: 40px;
-  box-shadow: 10px 10px 15px rgba(73, 78, 92, 0.1);
-  background: #fff;
-  transition: 0.4s;
-}
-
-#services  .box:hover {
-    background: rgba(248, 82, 12, 0.2);
+.navbar-brand:hover, .navbar-brand:focus {
+    font-size: 2em;
     color: #f8520c;
-  box-shadow: 0px 0px 30px rgba(73, 78, 92, 0.15);
-  transform: translateY(-10px);
-  -webkit-transform: translateY(-10px);
-  -moz-transform: translateY(-10px);
-    cursor: pointer;
-}
-
-#services .box .icon {
-  float: left;
-}
-
-#services .box .icon i {
-  color: #444;
-  font-size: 64px;
-  transition: 0.5s;
-  line-height: 0;
-  margin-top: 34px;
-}
-
-#services .box .icon i:before {
-  background: #f8520c;
-
-  background-clip: border-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 
-#services .box h4 {
-  margin-left: 100px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 22px;
+.btn-outline-theme:hover, .btn-outline-theme:focus {
+    font-size: 0.8em;
+    color: #ffffff;
+    background: #f8520c;
+    text-decoration: none;
+    white-space: nowrap;
 }
-
-#services .box h4 a {
-  color: #444;
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
 }
-
-#services .box p {
-  font-size: 14px;
-  margin-left: 100px;
-  margin-bottom: 0;
-  line-height: 24px;
+.mutted{
+    color: #6f6f6f;
 }
+.btn-outline-theme{
+-webkit-text-size-adjust: 100%;
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+font-family: "Montserrat", sans-serif;
+-webkit-font-smoothing: antialiased;
+box-sizing: border-box;
+text-decoration: none;
+display: inline-block;
+margin-bottom: 0;
+font-weight: 600;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+touch-action: manipulation;
+cursor: pointer;
+user-select: none;
+background-image: none;
+background-color: #ffffff;
+line-height: 0.66em;
+color: #f8520c;
+border: 2px solid #fb5e1c;
+text-transform: uppercase;
+border-radius: 5px;
+padding: 12px;
+font-size: 13px;
 
-@media (max-width: 767px) {
-  #services .box .box {
-    margin-bottom: 20px;
-  }
-  #services .box .icon {
-    float: none;
-    text-align: center;
-    padding-bottom: 15px;
-  }
-  #services .box h4, #services .box p {
-    margin-left: 0;
-    text-align: center;
-  }
-}
-
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-#footer {
-
-  padding: 0 0 30px 0;
-  font-size: 14px;
 }
 
 .bg-orange-30:before {
     content: "";
     position: absolute;
-    background: rgb(248, 82, 12);
-    color: #ffffff;
+    background: rgba(248, 82, 12, 0.6);
     top: 0;
-    right: 50%;
-    width: 50%;
-    height: 100%;
+    right: 10%;
+    left: 30%;
+    width: 30%;
+    height: 120%;
     z-index: -1;
 }
+.mcp {
+    color: #f8520c;
+    font-weight: 900;
+    font-size: 150%;
 
-#services .badge_active {
-    background-color: #f8520c;
-    width: min-content;
-    color: white;
-    padding: 2px 4px;
-    text-align: center;
-    border-radius: 3px;
-    text-transform: uppercase;
 }
-#services .badge_test {
-    background-color: rgba(248, 82, 12, 0.44);
-    width: min-content;
-    color: white;
-    padding: 2px 4px;
-    text-align: center;
-    border-radius: 3px;
-    text-transform: uppercase;
+/**********************************/
+.line-chart {
+    animation: fadeIn 600ms cubic-bezier(.57,.25,.65,1) 1 forwards;
+    opacity: 0;
+    max-width: 640px;
+    width: 100%;
+}
+
+.aspect-ratio {
+    height: 0;
+    padding-bottom: 50%; // 495h / 990w
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+/*********************************************/
+.smaller{
+    font-size: 70%;
+}
+.active:hover{
+    background: rgba(248, 82, 12, 0.24);
+    cursor: pointer;
+}
+
+.not-active:hover{
+    background: rgba(119, 116, 116, 0.2);
+}
+.border-bottom-orange{
+    border-bottom: 1px solid rgb(248, 82, 12);
 }
