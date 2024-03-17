@@ -76,12 +76,12 @@ class MCPPaymentController extends Controller
             $defaultRole = Role::query()->where('start_role',1)->first();
             $user->assignRoles($defaultRole->slug);
 
-           Mail::send(
+        /*   Mail::send(
 			   'emails.welcome', (array)Null, static function ($message) use ($user) {
 				   
 	           $message->to($user->email, $user->name)->subject('Ваш платеж принят в обработку')
 		           ->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
-			   });
+			   });*/
         
         }
         return $user;
