@@ -17,7 +17,7 @@
                 <p class="text-body-secondary">Реализованный на высокоуровневом языке (GO) собственный БЛОКЧЕЙН (MCP ISIK - I See I Keep) имеет распределенные ноды разных типов (простой – для подтверждения транзакций и голосования, полный - для обработки всей цепи).</p>
                 <h4 class="fw-bold text-body-emphasis pb-2 border-bottom-orange">Стоимость 1 MCP / USDT c {{$chart_date['date_start']}} по {{$chart_date['date_end']}}</h4>
                 <canvas id="chart"></canvas>
-                <h4 class="fw-bold text-body-emphasis mt-3 pb-2 border-bottom-orange">Первичное размещение токенов платформы - скидка этапа 40% (до 14.04.2024)</h4>
+                <h4 class="fw-bold text-body-emphasis mt-3 pb-2 border-bottom-orange">Первичное размещение токенов платформы - скидка этапа 60% (до 14.04.2024)</h4>
                 <p class="text-body-secondary">Курс сегодня: 1 MCP = <strong>{{$price_now}}</strong> USDT (без скидки)</p>
                 <p class="text-body-secondary">Курс сегодня: 1 MCP = <strong>{{$price_now*0.4}}</strong> USDT (<strong> с учетом скидки 60%</strong>)</p>
                 <a href="{{ route('ico.main') }}" type="button" class="btn-outline-theme">{{__('К ICO размещению')}}</a>
