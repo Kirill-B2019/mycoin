@@ -13,7 +13,7 @@
 
         <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
             <div class="col d-flex flex-column align-items-start gap-2" style="vertical-align: top;">
-                <h4 class="fw-bold text-body-emphasis pb-2 border-bottom-orange">MCP BLOCKCHAIN + EXPLORER</h4><span class="badge text-bg-success">АКТИВЕН</span>
+                <h4 class="fw-bold text-body-emphasis pb-2 border-bottom-orange">MCP BLOCKCHAIN + EXPLORER</h4>Статус: <span class="badge text-bg-success">АКТИВЕН</span>
                 <p class="text-body-secondary">Реализованный на высокоуровневом языке (GO) собственный БЛОКЧЕЙН (MCP ISIK - I See I Keep) имеет распределенные ноды разных типов (простой – для подтверждения транзакций и голосования, полный - для обработки всей цепи).</p>
                 <h4 class="fw-bold text-body-emphasis pb-2 border-bottom-orange">Стоимость 1 MCP / USDT c {{$chart_date['date_start']}} по {{$chart_date['date_end']}}</h4>
                 <canvas id="chart"></canvas>
