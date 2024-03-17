@@ -21,8 +21,8 @@ class MainController extends Controller
 		$first = $rates->first();
 	    $last = $rates->last();
 	    $chart_date = [
-		    'date_start' => $first['created_at'],
-		    'date_end' => $last['created_at'],
+		    'date_start' => $first['created_at']->format('d.m.Y'),
+		    'date_end' => $last['created_at']->format('d.m.Y'),
 		    
 	    ];
 	    $price_now =$last['rate'];
