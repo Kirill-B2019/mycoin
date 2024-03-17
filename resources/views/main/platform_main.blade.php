@@ -60,7 +60,7 @@
                         <div class="feature-icon-small d-inline-flex align-items-center justify-content-start">
                             <img src="{{asset('main/img/45-45gold.png')}}" alt="">
                         </div>
-                        <h4 class="fw-semibold mb-0 text-body-emphasis">MDA.MY-COIN</h4><span class="badge text-bg-secondary">ДОРАБОТКА</span>
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">MDA.MY-COIN</h4><span class="badge text-bg-secondary">РАЗРАБОТКА</span>
                         <p class="text-body-secondary">Площадка коллективного владения цифровыми ценностями (MyDiginalActive)</p>
                     </div>
 
@@ -68,7 +68,7 @@
                         <div class="feature-icon-small d-inline-flex align-items-center justify-content-start">
                             <img src="{{asset('main/img/45-45dev.png')}}" alt="">
                         </div>
-                        <h4 class="fw-semibold mb-0 text-body-emphasis">GPR.MY-COIN</h4><span class="badge text-bg-secondary">ДОРАБОТКА</span>
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">GPR.MY-COIN</h4><span class="badge text-bg-secondary">РАЗРАБОТКА</span>
                         <p class="text-body-secondary">Площадка ресурсоемких средних и крупных проектов для инвестирования и участия (GlobalPRoject)</p>
                     </div>
 
@@ -76,7 +76,7 @@
                         <div class="feature-icon-small d-inline-flex align-items-center justify-content-start">
                             <img src="{{asset('main/img/45-45dev.png')}}" alt="">
                         </div>
-                        <h4 class="fw-semibold mb-0 text-body-emphasis">EX.MY-COIN</h4><span class="badge text-bg-secondary">ДОРАБОТКА</span>
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">EX.MY-COIN</h4><span class="badge text-bg-secondary">РАЗРАБОТКА</span>
                         <p class="text-body-secondary">Площадка обмена, движения активов платформы (EXchange).</p>
                     </div>
 
@@ -92,7 +92,7 @@
                         <div class="feature-icon-small d-inline-flex align-items-center justify-content-start">
                             <img src="{{asset('main/img/45-45dev.png')}}" alt="">
                         </div>
-                        <h4 class="fw-semibold mb-0 text-body-emphasis">IK.MY-COIN</h4><span class="badge text-bg-secondary">ДОРАБОТКА</span>
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">IK.MY-COIN</h4><span class="badge text-bg-secondary">РАЗРАБОТКА</span>
                         <p class="text-body-secondary">База знаний платформы, FAQ по подсистемам, FAQ по проектам (IKnow)</p>
                     </div>
 
@@ -100,7 +100,7 @@
                         <div class="feature-icon-small d-inline-flex align-items-center justify-content-start">
                             <img src="{{asset('main/img/45-45dev.png')}}" alt="">
                         </div>
-                        <h4 class="fw-semibold mb-0 text-body-emphasis">DD.MY-COIN</h4><span class="badge text-bg-secondary">ДОРАБОТКА</span>
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">DD.MY-COIN</h4><span class="badge text-bg-secondary">РАЗРАБОТКА</span>
                         <p class="text-body-secondary">Площадка оборота цифровых активов недвижимости (DigitalDevelopment)</p>
                     </div>
 
