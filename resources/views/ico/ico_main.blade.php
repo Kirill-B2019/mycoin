@@ -113,14 +113,14 @@
                                     <div class="col-xxl-3 col-sm-6 col-md-6 col-lg-6 col-xl-3">
                                         <div class="status-info animated" data-animate="fadeInUp" data-delay="0.9">
                                             <h6 class="title title-xxs tc-default status-title ttu">{{__('Этапная скидка')}}</h6>
-                                            <h3 class="fz-3 fw-3 status-percent">40%</h3>
+                                            <h3 class="fz-3 fw-3 status-percent">60%</h3>
                                             <div class="fz-8">{{__('ДОСТУПНА СЕЙЧАС')}}</div>
                                         </div>
                                     </div>
                                     <div class="col-xxl-3 col-sm-6 col-md-6 col-lg-6 col-xl-3">
                                         <div class="status-info animated" data-animate="fadeInUp" data-delay="0.9">
-                                            <h6 class="title title-xxs tc-default status-title ttu">Цена сейчас: {{$nowPrice*0.6}}</h6>
-                                            <h3 class="fz-3 fw-3 status-percent">{{$nowPrice*0.6}} USDT </h3>
+                                            <h6 class="title title-xxs tc-default status-title ttu">Цена сейчас: {{$nowPrice*0.4}}</h6>
+                                            <h3 class="fz-3 fw-3 status-percent">{{$nowPrice*0.4}} USDT </h3>
                                             <div class="fz-8">1 MCP = 0,01 rgAU (10Karat)</div>
                                         </div>
                                     </div>
