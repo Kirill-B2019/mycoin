@@ -15,7 +15,7 @@
             <div class="col d-flex flex-column align-items-start gap-2" style="vertical-align: top;">
                 <h4 class="fw-bold text-body-emphasis pb-2 border-bottom-orange">MCP BLOCKCHAIN + EXPLORER</h4><span class="badge text-bg-success">АКТИВЕН</span>
                 <p class="text-body-secondary">Реализованный на высокоуровневом языке (GO) собственный БЛОКЧЕЙН (MCP ISIK - I See I Keep) имеет распределенные ноды разных типов (простой – для подтверждения транзакций и голосования, полный - для обработки всей цепи).</p>
-                <h4 class="fw-bold text-body-emphasis pb-2 border-bottom-orange">Стоимость 1 MCP / USDT c DATA по DATA</h4>
+                <h4 class="fw-bold text-body-emphasis pb-2 border-bottom-orange">Стоимость 1 MCP / USDT c {{$chart_date['date_start']}} по {{$chart_date['date_end']}}</h4>
                 <canvas id="chart"></canvas>
                 <h4 class="fw-bold text-body-emphasis mt-3 pb-2 border-bottom-orange">Первичное размещение токенов платформы - скидка этапа 40% (до 14.04.2024)</h4>
                 <p class="text-body-secondary">Курс сегодня: 1 MCP = <strong>{{$price_now*0.4}}</strong> USDT (с учетом скидки)</p>

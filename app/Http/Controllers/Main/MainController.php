@@ -16,9 +16,17 @@ class MainController extends Controller
 			$data_cart['labels'][] = $rate->created_at->format('d.m.Y');
 			$data_cart['data'][]=$rate->rate;
 		}
-	    $price_last = $rates->last();
-	    $price_now =$price_last['rate'];
 		
-	return view('main.platform_main',compact(['data_cart','price_now']));
+		
+		$first = $rates->first();
+	    $last = $rates->last();
+	    $chart_date = [
+		    'date_start' => $first['created_at'],
+		    'date_end' => $last['created_at'],
+		    
+	    ];
+	    $price_now =$last['rate'];
+		
+	return view('main.platform_main',compact(['data_cart','price_now','chart_date']));
    }
 }
