@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="MyCOIN platform">
+    <meta name="description" content="Увеличьте свой капитал с помощью MY-COIN платформы и инвестиций в криптоактивы. Выберите новый токен и примите участие в pre-ICO.">
     <meta name="author" content="KirillB">
 
     <!-- csrf -->
@@ -58,6 +58,9 @@
 </main>
 <footer id="footer">
     <div class="container">
+        <p class="text-center smaller">
+        Достигните финансовой свободы с MY-COIN платформой и инвестируйте в проекты на платформе MCP. Новый токен MCP и предварительное размещение (pre-ICO) доступны.
+        </p>
         <p class="text-center smaller">Copyright © <strong>KB</strong>  {{date('Y')}} - LEGAT CORE </p>
     </div>
 </footer><!-- #footer -->
