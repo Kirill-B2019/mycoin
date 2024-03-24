@@ -42,7 +42,7 @@
                         <p class="text-body-secondary">Площадка первичного размещения токенов проектов и самой платформы</p>
                     </div>
 
-                    <div class="col d-flex flex-column gap-2 not-active">
+                    <div class="col d-flex flex-column gap-2 active" onclick="window.open('{{ env('APP_DOMAIN_IS') }}','_blank')">
                         <div class="feature-icon-small d-inline-flex align-items-center justify-content-start">
                             <img src="{{asset('main/img/45-45test.png')}}" alt="">
                         </div>
