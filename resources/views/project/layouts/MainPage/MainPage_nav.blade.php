@@ -36,7 +36,7 @@
                             <ul>
                                 @role('SuperAdmin')
                                 <li>
-                                    <a href="{{ route('adp.home') }}">
+                                    <a href="{{ env('APP_DOMAIN_ADP') }}">
                                         {{ __('Кабинет администратора') }}&nbsp;<i class="fe fe-log-out fe-14"></i>
                                     </a>
                                 </li>

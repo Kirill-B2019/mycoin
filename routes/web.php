@@ -53,7 +53,11 @@ Route::group(['domain'=>getenv('APP_DOMAIN_ICO')],function (){
 });
 
 
-Route::group(['domain'=>getenv('APP_DOMAIN_PR')],function (){
+Route::group([
+    'domain'=>getenv('APP_DOMAIN_PR'),
+
+    ],function (){
+
     Route::get('/', [MainPageController::class, 'index'])->name('project.main');
     Route::get('/about', function () { return view('project.about'); })->name('project.about');
     Route::get('/contact', function () { return view('project.contact'); })->name('project.contact');
@@ -84,15 +88,15 @@ Auth::routes();
 // Админка
 
 Route::group([
+	'domain'=>getenv('APP_DOMAIN_ADP'),
 	'middleware' => ['auth','role:SuperAdmin'],
-	'prefix' => 'adp',
-	'base_path' =>('/adp'),
-	'domain'=>getenv('APP_DOMAIN')
+
+
 	], function () {
 
 
 
-        Route::get('/home', function () { return view('adp.home'); })->name('adp.home');
+        Route::get('/', function () { return view('adp.home'); })->name('adp.home');
         //Загрузка картинки
         Route::post('image-upload', [AdmImageUploadController::class, 'storeImage'])->name('image.upload');
 
@@ -210,11 +214,11 @@ Route::group([
 	        Route::post('/nodes/delete/{id}', [ChainNodeController::class, 'delete'])->name('adp.chain_nodes.delete');
 	        Route::post('/new-nodes', [ChainNodeController::class, 'create'])->name('adp.new-chain_nodes');
 
-	// Админ категории
-	Route::get('/currencies', [AdmCurrencyController::class, 'index'])->name('adp.currencies');
-		Route::post('/currencies/update/{id}', [AdmCurrencyController::class, 'update'])->name('adp.currencies.update');
-		Route::post('/currencies/delete/{id}', [AdmCurrencyController::class, 'delete'])->name('adp.currencies.delete');
-		Route::post('/new-currencies', [AdmCurrencyController::class, 'create'])->name('adp.new-currencies');
+		// Админ категории
+		Route::get('/currencies', [AdmCurrencyController::class, 'index'])->name('adp.currencies');
+			Route::post('/currencies/update/{id}', [AdmCurrencyController::class, 'update'])->name('adp.currencies.update');
+			Route::post('/currencies/delete/{id}', [AdmCurrencyController::class, 'delete'])->name('adp.currencies.delete');
+			Route::post('/new-currencies', [AdmCurrencyController::class, 'create'])->name('adp.new-currencies');
 
 
 });

@@ -34,7 +34,7 @@
 
             <div class="col ">
                 <div class="row row-cols-1 row-cols-sm-2 g-4 ">
-                    <div class="col d-flex flex-column gap-2 active" onclick="window.open('https://ico.my-coin.one/','_blank')">
+                    <div class="col d-flex flex-column gap-2 active" onclick="window.open('{{ env('APP_DOMAIN_ICO') }}','_blank')">
                         <div class="feature-icon-small d-inline-flex align-items-center justify-content-start">
                             <img src="{{asset('main/img/45-45active.png')}}" alt="">
                         </div>
@@ -49,7 +49,7 @@
                         <h4 class="fw-semibold mb-0 text-body-emphasis">IS.MY-COIN</h4><span class="badge text-bg-info">ТЕСТИРОВАНИЕ</span>
                         <p class="text-body-secondary">Web обозреватель <strong>MCP BLOCKCHAIN</strong> платформы и сети <strong>MCP:selfNET</strong> (ISee)</p>
                     </div>
-                    <div class="col d-flex flex-column gap-2 not-active">
+                    <div class="col d-flex flex-column gap-2 active" onclick="window.open('{{ env('APP_DOMAIN_PR') }}','_blank')">
                         <div class="feature-icon-small d-inline-flex align-items-center justify-content-start">
                             <img src="{{asset('main/img/45-45update.png')}}" alt="">
                         </div>

@@ -17,7 +17,7 @@ class CheckUserPermission {
 	public function handle($request, Closure $next, $permission) {
 		if($permission !== null && !auth()->user()->hasPerm($permission)) {
 			
-			return Redirect::route('cabinet/main')->with('status','Нет разрешения');
+			return Redirect::route('cabinet.main')->with('status', 'Нет разрешения');
 		}
 		return $next($request);
 	}

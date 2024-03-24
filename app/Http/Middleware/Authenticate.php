@@ -20,6 +20,7 @@ class Authenticate extends Middleware
 	{
 		parent::handle($request, $next, ...$guards);
 		if (!Auth::check()) {
+		
 			return redirect('/login');
 		}
 		

@@ -138,7 +138,7 @@ return [
     |
     | The session cookie path determines the path for which the cookie will
     | be regarded as available. Typically, this will be the root path of
-    | your application but you are free to change this when necessary.
+    | your application  you are free to change this when necessary.
     |
     */
 
@@ -154,8 +154,8 @@ return [
     | available to in your application. A sensible default has been set.
     |
     */
-
-    'domain' => env('SESSION_DOMAIN', null),
+	
+	'domain' => '.my-coin-dev.one',
 
     /*
     |--------------------------------------------------------------------------
@@ -163,12 +163,12 @@ return [
     |--------------------------------------------------------------------------
     |
     | By setting this option to true, session cookies will only be sent back
-    | to the server if the browser has a HTTPS connection. This will keep
+    | to the server if the browser has  HTTPS connection. This will keep
     | the cookie from being sent to you when it can't be done securely.
     |
     */
-
-    'secure' => env('SESSION_SECURE_COOKIE'),
+	
+	'secure' => env('SESSION_SECURE_COOKIE', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -196,6 +196,6 @@ return [
     |
     */
 
-    'same_site' => "lax",
+    'same_site' => null,
 
 ];
