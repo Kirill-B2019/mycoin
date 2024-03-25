@@ -6,8 +6,6 @@ namespace App\Http\Controllers\Adm;
 use App\Http\Controllers\AdminController;
 use App\Models\BlockChain\Block;
 use App\Models\BlockChain\Chain;
-use App\Models\OrderStatus;
-use App\Models\PaymentOrder;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\UserWallet;
@@ -41,7 +39,7 @@ class AdmPaymentOrderController extends AdminController
 
             ]));
 
-	        $this->addPayment($user,5,$res['index'], $Request->get('amount'));
+	        $user->addPayment($user,5,$res['index'], $Request->get('amount'));
             $this->addAmmountinWallet($user,$Request->get('mcp_amount'));
         }
     }
@@ -61,57 +59,52 @@ class AdmPaymentOrderController extends AdminController
 
     public function findeOfCreateOnMail($mail)
     {
-        $user = User::query()->where('email',$mail)->first();
-        if (!$user){
-            $user = User::query()->create([
-                'name' => 'MYCIOIN_User_'.now()->timestamp,
+        $user = User::where('email', $mail)->first();
+
+        if (!$user) {
+            $user = User::create([
+                'name' => 'MYCOIN_User_' . now()->timestamp,
                 'email' => $mail,
                 'password' => '0',
-
             ]);
-            $defaultRole = Role::query()->where('start_role',1)->first();
+
+            $defaultRole = Role::where('start_role', 1)->first();
             $user->assignRoles($defaultRole->slug);
 
-            $userWallet = new UserWallet();
-              do {
-                $wallet = 'MCPW'.Str::random(7).md5($user->email);
-            } while (UserWallet::where('address', $wallet)->exists());
+            return $user;
+        } else {
+            return $user;
+        }
+    }
 
-            $userWallet->user_id = $user->id; // Предполагается, что $user - это объект пользователя
-            $userWallet->address = $wallet;
+
+    public function addAmmountinWallet($user, $amount, $currency_id = 1)
+    {
+        $userWallet = UserWallet::where('user_id', $user->id)->first();
+
+        if ($userWallet) {
+            $userWallet->currency_id = $currency_id;
+            $userWallet->balance += $amount;
             $userWallet->save();
-/*
-               Mail::send('project.emails.welcome', (array)Null,function ($message) use ($user) {
-                    $message->to($user->email, $user->name)->subject('Ваш платеж принят в обработку');
-                });*/
-            return $user;
+            return $userWallet;
+        } else {
+            $newUserWallet = new UserWallet();
+
+            do {
+                $address = 'MCPW' . Str::random(6) . md5(now());
+            } while (UserWallet::where('address', $address)->exists());
+
+            $newUserWallet->user_id = $user->id; // Присваиваем user_id новому кошельку
+            $newUserWallet->address = $address;
+            $newUserWallet->currency_id = $currency_id;
+            $newUserWallet->balance = $amount;
+            $newUserWallet->save();
+
+            return $newUserWallet;
         }
-        else{
-            return $user;
-        }
     }
 
-    public function addPayment($user,$currency_id,$trnx,$amount)
-    {
-        $orderStatus = OrderStatus::query()->where('slug','New')->first();
 
-        return $res = PaymentOrder::query()->create([
-            'user_id'=> $user->id,
-            'currency_id'=>$currency_id,
-            'amount'=>$amount,
-            'trnx' => $trnx,
-            'order_status_id'=>$orderStatus->id,
-        ]);
-    }
-
-    public function addAmmountinWallet($user,$amount,$currency_id=1)
-    {
-
-        $userWallet = UserWallet::query()->where('user_id',$user->id)->first();
-        $userWallet->currency_id = $currency_id;
-        $userWallet->balance += $amount;
-        $userWallet->save();
-    }
 
 
 

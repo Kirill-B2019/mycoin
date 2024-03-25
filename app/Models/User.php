@@ -4,6 +4,7 @@ namespace App\Models;
 
 
 
+use App\Traits\HasPayment;
 use App\Traits\HasRolesAndPermissions;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,7 +15,11 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable,HasRolesAndPermissions;
+    use HasApiTokens,
+        HasFactory,
+        Notifiable,
+        HasRolesAndPermissions,
+        HasPayment;
 
 
 
