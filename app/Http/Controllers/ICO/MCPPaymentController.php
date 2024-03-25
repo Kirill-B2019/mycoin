@@ -8,6 +8,7 @@ use App\Models\BlockChain\Chain;
 use App\Models\Role;
 use App\Models\User;
 
+use App\Models\UserWallet;
 use http\Client\Request;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -29,8 +30,6 @@ class MCPPaymentController extends Controller
         {
             $user =  $this->findeOfCreateOnMail($Request->get('email'));
             $user_name = $user->name;
-
-
 
             if($Request->get('amount'))
             {
@@ -75,6 +74,11 @@ class MCPPaymentController extends Controller
             ]);
             $defaultRole = Role::query()->where('start_role',1)->first();
             $user->assignRoles($defaultRole->slug);
+            $userWallet = new UserWallet();
+
+            $userWallet->user_email = $user->email; // Предполагается, что $user - это объект пользователя
+
+            $userWallet->save();
 
         Mail::send(
 			   'emails.welcome', (array)Null, static function ($message) use ($user) {

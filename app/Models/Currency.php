@@ -20,4 +20,9 @@ class Currency extends Model
 	{
 		return $this->hasOne(CurrencyRate::class, 'currency_first')->latestOfMany();
 	}
+
+    public function wallets(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(UserWallet::class);
+    }
 }

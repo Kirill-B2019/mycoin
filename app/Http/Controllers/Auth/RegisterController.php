@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Role;
+use App\Models\UserWallet;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 
 class RegisterController extends Controller
 {
@@ -75,6 +76,10 @@ class RegisterController extends Controller
         $defaultRole = Role::where('start_role',1)->first();
 ;
         $user->assignRoles($defaultRole->slug);
+
+        $userWallet = new UserWallet();
+        $userWallet->user_email = $user->email; // Предполагается, что $user - это объект пользователя
+        $userWallet->save();
 
     /*    Mail::send('emails.welcome', compact('data'), function ($message) use ($user) {
             $message->to($user->email, $user->name)->subject('Добро пожаловать на проектную площадку MyCOIN in');

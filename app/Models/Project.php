@@ -98,4 +98,9 @@ class Project extends Model
         return $this->hasOne(ExpertOpinion::class);
     }
 
+    public function projectWallet(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(UserWallet::class,'owner_wallet');
+    }
+
 }

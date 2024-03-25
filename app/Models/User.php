@@ -87,6 +87,12 @@ class User extends Authenticatable
         return $this->belongsToMany(Project::class);
     }
 
+    public function userWallet(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(UserWallet::class);
+    }
+
+
 
 
 }
