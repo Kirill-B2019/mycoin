@@ -342,7 +342,7 @@
                         MCP <strong>IS</strong><span class="text-muted h4 text-secondary">ee</span>
                         <strong>IK</strong><span class="text-muted h4 text-secondary">eep</span>
                     </h1>
-                    <p class="lead px-md-1 mb-2"> MYCOIN  <strong>Web-обозреватель</strong> инвестициолнной платформы.</p>
+                    <p class="lead px-md-1 mb-2"> MYCOIN  <strong>Web-обозреватель</strong> инвестиционной платформы.</p>
                     <p><strong>ISIK</strong> (I see what I keep) - Я вижу, что Я храню </p><hr>
                 </div>
             </div>
