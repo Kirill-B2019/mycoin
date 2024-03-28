@@ -15,6 +15,7 @@ use App\Http\Controllers\Adm\AdmModalWindowController;
 use App\Http\Controllers\Adm\AdmNotesController;
 use App\Http\Controllers\Adm\AdmOrderStatusController;
 
+use App\Http\Controllers\Adm\AdmPaymentOrderController;
 use App\Http\Controllers\Adm\AdmPermissionController;
 use App\Http\Controllers\Adm\AdmProjectsController;
 use App\Http\Controllers\Adm\AdmRoleController;
@@ -44,7 +45,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
-Route::post('/send_pay',  [MCPPaymentController::class, 'reception'])->name('send_pay');
+
 
 
 //ОСНОВНОЙ ДОМЕН
@@ -55,6 +56,7 @@ Route::group(['domain'=>getenv('APP_DOMAIN')],function (){
 //ICO ДОМЕН
 Route::group(['domain'=>getenv('APP_DOMAIN_ICO')],function (){
     Route::get('/',  [MCPTokenController::class, 'index'])->name('ico.main');
+    Route::post('/send_pay',  [AdmPaymentOrderController::class, 'reception'])->name('send_pay');
 
 
 });
