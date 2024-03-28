@@ -42,7 +42,7 @@ class AdmPaymentOrderController extends AdminController
             ]));
 
 	        $this->addPayment($user,5,$res['index'], $Request->get('amount'));
-            $this->addAmmountinWallet($user,$Request->get('mcp_amount'));
+         //   $this->addAmmountinWallet($user,$Request->get('mcp_amount'));
         }
     }
 
