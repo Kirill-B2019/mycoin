@@ -50,7 +50,7 @@ use Illuminate\Support\Facades\Route;
 
 //ОСНОВНОЙ ДОМЕН
 Route::group(['domain'=>getenv('APP_DOMAIN')],function (){
-	Route::get('/', [MainController::class, 'index'])->name('main.platform_main');
+	Route::post('/', [MainController::class, 'index'])->name('main.platform_main');
 	});
 
 //ICO ДОМЕН

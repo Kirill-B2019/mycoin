@@ -46,7 +46,7 @@
                 <div class="ath-body bg-theme tc-light">
                     <h5 class="ath-heading title">Участие<br/> в PRE-ICO</h5>
 
-                    <form action="{{route('send_pay')}}" method="GET">
+                    <form action="{{route('send_pay')}}" method="POST">
                         <input type="hidden" id="hid_adm" name="mcp_amount" value="10">
                         @csrf
                         <div class="row">
