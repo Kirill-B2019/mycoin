@@ -56,7 +56,7 @@ Route::group(['domain'=>getenv('APP_DOMAIN')],function (){
 //ICO ДОМЕН
 Route::group(['domain'=>getenv('APP_DOMAIN_ICO')],function (){
     Route::get('/',  [MCPTokenController::class, 'index'])->name('ico.main');
-    Route::post('/send_pay',  [AdmPaymentOrderController::class, 'reception'])->name('send_pay');
+    Route::get('/send_pay',  [AdmPaymentOrderController::class, 'reception'])->name('send_pay');
 
 
 });
