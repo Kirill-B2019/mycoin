@@ -16,7 +16,7 @@ use Illuminate\Support\Str;
 
 class AdmPaymentOrderController extends AdminController
 {
-    public function reception(Request $Request): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    public function reception(Request $Request)
     {
 
         $user_name = '';
