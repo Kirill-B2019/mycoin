@@ -37,7 +37,7 @@ class PublicModalController extends Controller
         $res = Project::where('id',$id)->first();
         $includeHTML = '
         <div class="modal fade" id="'.$id.'" tabindex="-1" aria-labelledby="subscribeModalProject">
-          <form method="POST" action="'. route('subscribe-project').'"enctype="multipart/form-data">
+          <form method="GET" action="'. route('subscribe-project').'"enctype="multipart/form-data">
                 '.csrf_field().'
                  <input type="hidden" name="projectId" value="'.$id.'">
              <div class="modal-dialog modal-dialog-centered">

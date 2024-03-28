@@ -50,7 +50,7 @@ use Illuminate\Support\Facades\Route;
 
 //ОСНОВНОЙ ДОМЕН
 Route::group(['domain'=>getenv('APP_DOMAIN')],function (){
-	Route::post('/', [MainController::class, 'index'])->name('main.platform_main');
+	Route::get('/', [MainController::class, 'index'])->name('main.platform_main');
 	});
 
 //ICO ДОМЕН
@@ -82,7 +82,7 @@ Route::group([
     //Недвижимость
     Route::get('/development', function () { return view('project.development'); })->name('project.development');
     //подписка
-    Route::post('/subscribe-project', [PublicSubscribeController::class, 'createSubscribeProject'])->name('subscribe-project');
+    Route::get('/subscribe-project', [PublicSubscribeController::class, 'createSubscribeProject'])->name('subscribe-project');
     //Инвесторы
     Route::get('/sponsors', function () { return view('project.sponsors'); })->name('project.sponsors');
     Route::get('/top_sponsors', function () { return view('project.top_sponsors'); })->name('project.top_sponsors');
