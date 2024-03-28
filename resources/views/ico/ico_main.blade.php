@@ -372,7 +372,7 @@
                                     <img class="shadow rounded" src="{{asset('ico/images/app-screens/sc-medium-b.png')}}" alt="">
                                     <img class="nk-block-img-plx plx-screen shadow rounded" src="{{asset('ico/images/app-screens/sc-small-d.jpg')}}" alt="">
                                     <img class="nk-block-img-plx plx-circle plx-circle-s1" src="{{asset('ico/images/gfx/circle-a.png')}}" alt="">
-                                    <img class="nk-block-img-plx plx-polygon plx-polygon-s1" src="{{asset('icoimages/gfx/polygon-a.png')}}" alt="">
+                                   {{-- <img class="nk-block-img-plx plx-polygon plx-polygon-s1" src="{{asset('icoimages/gfx/polygon-a.png')}}" alt="">--}}
                                     <img class="nk-block-img-plx plx-triangle plx-triangle-s1" src="{{asset('ico/images/gfx/triangle-a.png')}}" alt="">
                                 </div>
                             </div>

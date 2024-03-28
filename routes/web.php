@@ -43,6 +43,10 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Route;
 
+
+Route::post('/send_pay',  [MCPPaymentController::class, 'reception'])->name('send_pay');
+
+
 //ОСНОВНОЙ ДОМЕН
 Route::group(['domain'=>getenv('APP_DOMAIN')],function (){
 	Route::get('/', [MainController::class, 'index'])->name('main.platform_main');
@@ -51,7 +55,7 @@ Route::group(['domain'=>getenv('APP_DOMAIN')],function (){
 //ICO ДОМЕН
 Route::group(['domain'=>getenv('APP_DOMAIN_ICO')],function (){
     Route::get('/',  [MCPTokenController::class, 'index'])->name('ico.main');
-        Route::post('/send_pay',  [MCPPaymentController::class, 'reception'])->name('send_pay');
+
 
 });
 

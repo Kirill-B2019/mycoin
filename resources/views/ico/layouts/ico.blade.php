@@ -140,30 +140,7 @@
     </div>
 </div>
 <!-- .modal @e -->
-<!-- Modal @s -->
-<div class="modal fade" id="reset-popup">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <a href="#" class="modal-close" data-bs-dismiss="modal" aria-label="Close"><em class="ti ti-close"></em></a>
-            <div class="ath-container m-0">
-                <div class="ath-body bg-theme tc-light">
-                    <h5 class="ath-heading title">Reset <small class="tc-default">with your Email</small></h5>
-                    <form action="#">
-                        <div class="field-item">
-                            <div class="field-wrap">
-                                <input type="text" class="input-bordered" placeholder="Your Email">
-                            </div>
-                        </div>
-                        <button class="btn btn-primary btn-block btn-md">Reset Password</button>
-                        <div class="ath-note text-center"> Remembered? <a href="#" data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#login-popup"> <strong>Sign in here</strong></a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><!-- .modal @e -->
-<!-- preloader -->
+
 <div class="preloader preloader-alt no-split"><span class="spinner spinner-alt"><img class="spinner-brand" src="{{asset('images/load.png')}}" alt=""></span></div>
 
 <script src="{{asset('ico/assets/js/jquery.bundle.js?ver=210')}}"></script>
