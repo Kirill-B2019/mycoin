@@ -6,6 +6,8 @@ namespace App\Http\Controllers\Adm;
 use App\Http\Controllers\AdminController;
 use App\Models\BlockChain\Block;
 use App\Models\BlockChain\Chain;
+use App\Models\OrderStatus;
+use App\Models\Payment;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\UserWallet;
@@ -39,7 +41,7 @@ class AdmPaymentOrderController extends AdminController
 
             ]));
 
-	        $user->addPayment($user,5,$res['index'], $Request->get('amount'));
+	        $this->addPayment($user,5,$res['index'], $Request->get('amount'));
             $this->addAmmountinWallet($user,$Request->get('mcp_amount'));
         }
     }
@@ -105,7 +107,32 @@ class AdmPaymentOrderController extends AdminController
     }
 
 
+    public function addPayment($user,$currency_id,$index,$amount): Payment
+    {
+        $orderStatus = OrderStatus::query()->where('slug','New')->first();
+        $payment = new Payment();
+        $payment->user_id = $user->id;
+        $payment->currency_id = $currency_id;
+        $payment->amount = $amount;
+        $payment->trnx = $index;
+        $payment->order_status_id = $orderStatus->id;
+        $payment->save();
 
+
+        // Отправка письма
+        $payment = Payment::with('currency')->find($payment->currency_id);
+
+        if ($payment) {
+            $currency_name = $payment->currency->name;
+        } else {
+            $currency_name = ''; // или другое значение по умолчанию, если платеж не найден
+        }
+
+        Mail::send('project.emails.newPayment', ['user' => $user, 'payment' => $payment, 'currency_name' => $currency_name], function ($message) use ($payment, $user) {
+            $message->to($user->email, $user->name)->subject('Ваш платеж в размере '.$payment->amount.' принят в обработку');
+        });
+        return $payment;
+    }
 
 
 }
