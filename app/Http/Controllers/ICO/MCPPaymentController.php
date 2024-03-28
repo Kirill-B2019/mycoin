@@ -2,34 +2,34 @@
 
 namespace App\Http\Controllers\ICO;
 
+
+
 use App\Http\Controllers\Controller;
 use App\Models\BlockChain\Block;
 use App\Models\BlockChain\Chain;
+use App\Models\OrderStatus;
+use App\Models\Payment;
 use App\Models\Role;
 use App\Models\User;
-
 use App\Models\UserWallet;
-use http\Client\Request;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
+
 
 class MCPPaymentController extends Controller
 {
-    /**
-     * @param Request $Request
-     * @return Factory|View|Application
-     */
-    public function reception(Request $Request): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    public function reception(Request $Request)
     {
 
         $user_name = '';
-        $user_id = '';
+
         if($Request->get('email'))
         {
             $user =  $this->findeOfCreateOnMail($Request->get('email'));
             $user_name = $user->name;
+
+
 
             if($Request->get('amount'))
             {
@@ -42,7 +42,8 @@ class MCPPaymentController extends Controller
 
                 ]));
 
-                $this->addPayment(5,$res['index'], $Request->get('amount'));
+                $this->addPayment($user,5,$res['index'], $Request->get('amount'));
+                $this->addAmmountinWallet($user,$Request->get('mcp_amount'));
             }
         }
 
@@ -59,35 +60,80 @@ class MCPPaymentController extends Controller
 
     }
 
-
-    // ищем пользоватля
     public function findeOfCreateOnMail($mail)
     {
-        $user = User::query()->where('email',$mail)->first();
-        if (!$user)
-        {
-            $user = User::query()->create([
-                'name' => 'MYCIOIN_User_'.now()->timestamp,
+        $user = User::where('email', $mail)->first();
+
+        if (!$user) {
+            $user = User::create([
+                'name' => 'MYCOIN_User_' . now()->timestamp,
                 'email' => $mail,
                 'password' => '0',
-
             ]);
-            $defaultRole = Role::query()->where('start_role',1)->first();
+
+            $defaultRole = Role::where('start_role', 1)->first();
             $user->assignRoles($defaultRole->slug);
-            $userWallet = new UserWallet();
 
-            $userWallet->user_email = $user->email; // Предполагается, что $user - это объект пользователя
-
-            $userWallet->save();
-
-        Mail::send(
-			   'emails.welcome', (array)Null, static function ($message) use ($user) {
-
-	           $message->to($user->email, $user->name)->subject('Ваш платеж принят в обработку')
-		           ->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
-			   });
-
+            return $user;
+        } else {
+            return $user;
         }
-        return $user;
     }
+
+
+    public function addAmmountinWallet($user, $amount, $currency_id = 1)
+    {
+        $userWallet = UserWallet::where('user_id', $user->id)->first();
+
+        if ($userWallet) {
+            $userWallet->currency_id = $currency_id;
+            $userWallet->balance += $amount;
+            $userWallet->save();
+            return $userWallet;
+        } else {
+            $newUserWallet = new UserWallet();
+
+            do {
+                $address = 'MCPW' . Str::random(6) . md5(now());
+            } while (UserWallet::where('address', $address)->exists());
+
+            $newUserWallet->user_id = $user->id; // Присваиваем user_id новому кошельку
+            $newUserWallet->address = $address;
+            $newUserWallet->currency_id = $currency_id;
+            $newUserWallet->balance = $amount;
+            $newUserWallet->save();
+
+            return $newUserWallet;
+        }
+    }
+
+
+    public function addPayment($user,$currency_id,$index,$amount): Payment
+    {
+        $orderStatus = OrderStatus::query()->where('slug','New')->first();
+        $payment = new Payment();
+        $payment->user_id = $user->id;
+        $payment->currency_id = $currency_id;
+        $payment->amount = $amount;
+        $payment->trnx = $index;
+        $payment->order_status_id = $orderStatus->id;
+        $payment->save();
+
+        /*
+                // Отправка письма
+                $payment = Payment::with('currency')->find($payment->currency_id);
+
+                if ($payment) {
+                    $currency_name = $payment->currency->name;
+                } else {
+                    $currency_name = ''; // или другое значенпо умолчанию, если платеж не найден
+                }
+
+              /*  Mail::send('project.emails.newPayment', ['user' => $user, 'payment' => $payment, 'currency_name' => $currency_name], function ($message) use ($payment, $user) {
+                    $message->to($user->email, $user->name)->subject('Ваш платеж в размере '.$payment->amount.' принят в обработку');
+                });*/
+        return $payment;
+    }
+
+
 }

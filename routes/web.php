@@ -14,20 +14,21 @@ use App\Http\Controllers\Adm\AdmLetterIndexController;
 use App\Http\Controllers\Adm\AdmModalWindowController;
 use App\Http\Controllers\Adm\AdmNotesController;
 use App\Http\Controllers\Adm\AdmOrderStatusController;
-use App\Http\Controllers\Adm\AdmPaymentOrderController;
+
 use App\Http\Controllers\Adm\AdmPermissionController;
 use App\Http\Controllers\Adm\AdmProjectsController;
 use App\Http\Controllers\Adm\AdmRoleController;
 use App\Http\Controllers\Adm\AdmSectorController;
 use App\Http\Controllers\Adm\AdmUserController;
 use App\Http\Controllers\Adm\AdmWalletController;
-use App\Http\Controllers\Auth\LogoutController;
+
 use App\Http\Controllers\AuthUser\UserDonatesController;
 use App\Http\Controllers\AuthUser\UserNotesController;
 use App\Http\Controllers\AuthUser\UserProfileController;
 use App\Http\Controllers\AuthUser\UserProjectController;
 use App\Http\Controllers\AuthUser\UserSettingController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ICO\MCPPaymentController;
 use App\Http\Controllers\ICO\MCPTokenController;
 use App\Http\Controllers\Is\IsMainController;
 use App\Http\Controllers\MainPageController;
@@ -50,7 +51,7 @@ Route::group(['domain'=>getenv('APP_DOMAIN')],function (){
 //ICO ДОМЕН
 Route::group(['domain'=>getenv('APP_DOMAIN_ICO')],function (){
     Route::get('/',  [MCPTokenController::class, 'index'])->name('ico.main');
-        Route::post('/send_pay',  [AdmPaymentOrderController::class, 'reception'])->name('send_pay');
+        Route::post('/send_pay',  [MCPPaymentController::class, 'reception'])->name('send_pay');
 
 });
 
