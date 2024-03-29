@@ -188,7 +188,7 @@
                                                         РАЗРАБОТКА
                                     </span>
                                    <div class="d-flex my-3">
-                                       <img src="{{asset('main/img/45-45gold.png')}}" alt="">
+                                       <img src="{{asset('main/img/45-45dev.png')}}" alt="">
                                    </div>
                                    <p class="mb-4">Площадка ресурсоемких средних и крупных проектов (мегапроекты) для инвестирования и участия (GlobalPRoject)</p>
 
