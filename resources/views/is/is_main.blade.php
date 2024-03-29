@@ -1,6 +1,25 @@
-@extends('is.layouts.main')
-@section('title') MCP ISIK - MyCOINin CRYPTO FOUND Platform @endsection
+@extends('v2.layouts.main')
+@section('description')
+    <meta name="" content="Увеличьте свой капитал с помощью MY-COIN платформы и инвестиций в криптоактивы. Выберите новый токен и примите участие в pre-ICO.">
+@endsection
+@section('title') MCP ISIK - БЛОКЧЕЙН MyCOINin CRYPTO FOUND Platform @endsection
 @section('content')
+
+    <section class="section section bg-soft pb-2 overflow-hidden z-2">
+        <div class="container z-2">
+            <div class="row justify-content-center text-center pt-2">
+                <div class="col-lg-8 col-xl-8">
+                    <h1 class="display-2 mb-3">БЛОКЧЕЙН
+                        MCP <strong>IS</strong><span class="text-muted h4 text-secondary">ee</span>
+                        <strong>IK</strong><span class="text-muted h4 text-secondary">eep</span>
+                    </h1>
+                    <p class="lead px-md-1 mb-2"> MYCOIN  <strong>Web-обозреватель</strong> инвестиционной платформы.</p>
+                    <p><strong>ISIK</strong> (I see what I keep) - Я вижу, что Я храню </p><hr>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <div class="px-4 is_main_container">
 
@@ -105,4 +124,87 @@
         </div>
 
     </div>
+    @php
+        $from = json_encode($chart_date['from']);
+        $to = json_encode($chart_date['to']);
+    @endphp
+    <script>
+        // ============================================
+        // As of Chart.js v2.5.0
+        // http://www.chartjs.org/docs
+        // ============================================
+
+        var chart    = document.getElementById('chart').getContext('2d'),
+            gradient = chart.createLinearGradient(0, 0, 0, 450);
+
+        gradient.addColorStop(0, 'rgba(248,82,12,0.49)');
+        gradient.addColorStop(0.5, 'rgba(248,82,12,0.2)');
+        gradient.addColorStop(1, 'rgba(248,82,12,0.01)');
+
+        var from = {!! $from !!};
+        var to = {!! $to !!};
+
+        var data = {
+            labels: @json($data_cart['labels']),
+            datasets: [{
+                label: 'MCP/USDT с ' + from + ' по ' + to,
+                backgroundColor: gradient,
+                pointBackgroundColor: 'white',
+                borderWidth: 1,
+                borderColor: '#f8520c',
+                data: @json($data_cart['data']),
+            }]
+        };
+
+
+        var options = {
+            responsive: true,
+            maintainAspectRatio: true,
+            animation: {
+                easing: 'easeInOutQuad',
+                duration: 520
+            },
+            scales: {
+                xAxes: [{
+                    gridLines: {
+                        color: 'rgba(200, 200, 200, 0.05)',
+                        lineWidth: 0.5
+                    }
+                }],
+                yAxes: [{
+                    gridLines: {
+                        color: 'rgba(200, 200, 200, 0.08)',
+                        lineWidth: 0.5
+                    }
+                }]
+            },
+            elements: {
+                line: {
+                    tension: 0.5
+                }
+            },
+            legend: {
+                display: false
+            },
+            point: {
+                backgroundColor: 'white'
+            },
+            tooltips: {
+                titleFontFamily: 'Open Sans',
+                backgroundColor: 'rgba(0,0,0,0.3)',
+                titleFontColor: 'red',
+                caretSize: 5,
+                cornerRadius: 2,
+                xPadding: 10,
+                yPadding: 10
+            }
+        };
+
+
+        var chartInstance = new Chart(chart, {
+            type: 'line',
+            data: data,
+            options: options
+        });
+    </script>
 @endsection
