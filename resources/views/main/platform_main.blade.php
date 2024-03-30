@@ -115,7 +115,7 @@
                                    <p class="mb-4">Площадка первичного размещения токенов проектов платформы.</p>
                                </div>
                                <div class="card-footer">
-                                   <a href="{{ url(env('APP_DOMAIN_ICO')) }}" target="_blank" type="button" class="btn btn-block btn-primary rounded-bottom">Подробнее</a>
+                                   <a href="{{ url(env('APP_DOMAIN_ICO')) }}" target="_blank" type="button" class="btn btn-block btn-primary text-secondary rounded-bottom">Подробнее</a>
                                </div>
                                <!-- End Content -->
                            </div>
@@ -173,7 +173,7 @@
 
                                </div>
                                <div class="card-footer">
-                                   <a href="{{url(env('APP_DOMAIN_IS'))}}" target="_blank" type="button" class="btn btn-block btn-primary rounded-bottom">Подробнее</a>
+                                   <a href="{{url(env('APP_DOMAIN_IS'))}}" target="_blank" type="button" class="btn btn-block btn-primary text-secondary rounded-bottom">Подробнее</a>
                                </div>
 
                                <!-- End Content -->

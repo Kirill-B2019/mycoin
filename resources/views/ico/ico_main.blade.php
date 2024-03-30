@@ -217,7 +217,7 @@
                             <div class="col-lg-3 col-sm-6">
                                 <div class="feature feature-s6 feature-s6-4 animated" data-animate="fadeInUp" data-delay="0.6">
                                     <div class="feature-text">
-                                        <h5 class="title title-sm ttu">платформа Поддержки преоктного ICO</h5>
+                                        <h5 class="title title-sm ttu">платформа Поддержки проектного ICO</h5>
                                         <p>Проектное ICO на разных стадиях, поддержка автономных проектных подсистем. Платформа запуска проектов.</p>
                                     </div>
                                 </div>
