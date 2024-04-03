@@ -12,7 +12,7 @@
                     <h1 class="display-2 mb-3">ТОКЕНИЗИРОВАННАЯ ИНВЕСТИЦИОННАЯ ПРОЕКТНАЯ ПЛАТФОРМА
                         <strong>M</strong><span class="text-muted h4 text-secondary">y</span>
                         <strong>C</strong><span class="text-muted h4 text-secondary">oin</span>
-                        <strong>P</strong><span class="text-muted h4 text-secondary">atform</span>
+                        <strong>P</strong><span class="text-muted h4 text-secondary">latform</span>
                     </h1>
                     <p class="lead px-md-1 mb-2"> MYCOIN  <strong>utility</strong> токен платформы.</p>
                     <hr>
@@ -24,7 +24,8 @@
     <section>
         <div class="px-2 ">
            <div class="row justify-content-center">
-               <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 align-items-start" style="vertical-align: top;">
+
+               <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 align-items-start" style="vertical-align: top;">
                     <div class="row">
                         <div class="col-12 col-lg-12">
                             <div class="card bg-primary shadow-inset border-light">
@@ -99,8 +100,8 @@
                         </div>
                     </div>
                 </div>
-               <div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 align-items-start">
-                   <div class="row mb-2">
+               <div class="col-xl-6 col-lg-6 col-md-4 col-sm-12 align-items-start">
+                   <div class="row mb-2 small">
                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
                            <div class="card bg-primary shadow-inset border-light p-3 h-100">
                                <!-- Content -->
@@ -293,6 +294,7 @@
                        </div>
                    </div>
                </div>
+
             </div>
         </div>
     </section>
